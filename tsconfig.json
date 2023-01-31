@@ -8,7 +8,7 @@
         "allowJs": true,
         "moduleResolution": "node",
         //for absolute import
-        "baseUrl": "",
+        // "baseUrl": "",
         "esModuleInterop": true,
         //With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec
         //(require() module.export) common.js => import
