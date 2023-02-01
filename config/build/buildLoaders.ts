@@ -1,6 +1,8 @@
 import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
-export function buildLoaders(): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     //if dont use ts but js - will need babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -8,13 +10,23 @@ export function buildLoaders(): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
     const cssLoader = {
+
         test: /\.s[ac]ss$/i,
         use: [
-            // Creates `style` nodes from JS strings
-            'style-loader',
-            // Translates CSS into CommonJS
-            'css-loader',
-            // Compiles Sass to CSS
+            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        auto: (resPath: string) =>
+                            Boolean(resPath.includes('.module.scss')),
+                        //names of the styles will be generated in the prod env and will stay the same in dev env (for debugging purposes)
+                        localIdentName: options.isDev
+                            ? '[path][name]__[local]--[hash:base64:8]'
+                            : '[hash:base64:8]',
+                    },
+                },
+            },
             'sass-loader',
         ],
     };
