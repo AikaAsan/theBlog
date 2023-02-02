@@ -6,6 +6,7 @@ import './styles/index.scss';
 import { AboutPageAsync } from './pages/AboutPage/AboutPage.async';
 import { AboutMainPageAsync } from './pages/MainPage/MainPage.async';
 import { useTheme } from './theme/useTheme';
+import { classNames } from './helpers/classnames/classNames';
 
 export enum Theme {
     LIGHT = 'light',
@@ -14,7 +15,7 @@ export enum Theme {
 const App = () => {
     const { theme, toggleTheme } = useTheme();
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>{theme} THEME</button>
             <br />
             <Link to='/about'>ABOUT</Link>
