@@ -1,3 +1,4 @@
+import { createCipheriv } from 'crypto';
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { RouteProps } from 'react-router-dom';
@@ -22,3 +23,5 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         element: <AboutPage />,
     },
 };
+
+

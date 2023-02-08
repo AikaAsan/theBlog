@@ -8,3 +8,5 @@ export const AboutPageAsync = lazy(
             setTimeout(() => resolve(import('./AboutPage')), 1500);
         })
 );
+
+
