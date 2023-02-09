@@ -9,8 +9,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: 'ts-loader',
         exclude: /node_modules/,
     };
-    const cssLoader = {
 
+    const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -30,5 +30,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             'sass-loader',
         ],
     };
-    return [typescriptLoader, cssLoader];
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    };
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif| woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+    return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 }
