@@ -1,7 +1,4 @@
-import { log } from 'console';
 import { FC, useState, useMemo } from 'react';
-import { rootCertificates } from 'tls';
-import { CleanPlugin } from 'webpack';
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
@@ -30,5 +27,3 @@ const ThemeProvider: FC = ({ children }) => {
 };
 
 export default ThemeProvider;
-
-

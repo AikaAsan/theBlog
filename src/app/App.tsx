@@ -6,7 +6,6 @@ import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
-import { LangSwitcher } from 'widgets/LangSwitcher';
 
 const App = () => {
     const { theme } = useTheme();
@@ -15,7 +14,7 @@ const App = () => {
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback={<div>Loading...</div>}>
                 <Navbar />
-              
+
                 <div className='content-page'>
                     <Sidebar />
                     <AppRouter />

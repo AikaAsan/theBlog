@@ -1,5 +1,4 @@
-import { createCipheriv } from 'crypto';
-import { MainPage } from 'pages/MainPage';
+
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/classnames/classNames';
@@ -26,7 +25,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
     } = props;
     console.log('className', className);
     console.log('cls[theme]', cls[theme]);
-    console.log(theme); 
+    console.log(theme);
     return (
         <Link
             {...otherProps}
