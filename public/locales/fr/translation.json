@@ -1,6 +1,7 @@
 {
-    "Test Translation": "La traduction de test",
-    "lang": "Anglais",
-    "ABOUT": "À PROPOS",
-    "MAIN": "PRINCIPALE"
+  "Test Translation": "La traduction de test",
+  "lang": "Anglais",
+  "ABOUT": "À PROPOS",
+  "MAIN": "PRINCIPALE",
+  "Page Not Found": "La page demandée est introuvable"
 }
