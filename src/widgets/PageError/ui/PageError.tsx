@@ -13,7 +13,7 @@ export const PageError = ({ className }: PageErrorProps) => {
         location.reload();
     };
     return (
-        <div className={classNames(cls.PageError)}>
+        <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Oops something went wrong')}</p>
             <button onClick={reloadPage}>{t('Reload Page')}</button>
         </div>
