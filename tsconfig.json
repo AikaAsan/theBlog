@@ -26,5 +26,10 @@
     },
 
     // aware ts about jjest config
-    "include": ["./config/jest/setupTest.ts", "src/**/*"]
+    "include": [
+        "./config/jest/setupTest.ts",
+        "src/**/*",
+        "/src/**/*.ts",
+        "/src/**/*.tsx"
+    ]
 }
