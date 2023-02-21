@@ -57,5 +57,5 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
-    'react/display-name': ['enabled', { ignoreTranspilerName: true }],
+    // 'react/display-name': ['enabled', { ignoreTranspilerName: true }],
 };
