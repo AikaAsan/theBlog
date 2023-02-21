@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoader } from './loaders/BuildCssLoader';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     //if dont use ts but js - will need babel-loader
