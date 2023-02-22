@@ -1,9 +1,10 @@
 {
-  "Test Translation": "La traduction de test",
-  "lang": "Anglais",
-  "ABOUT": "À PROPOS",
-  "MAIN": "PRINCIPALE",
-  "Page Not Found": "La page demandée est introuvable",
-  "Oops something went wrong": "une erreur inattendue est apparue",
-  "Reload Page": "Rafraîchir la page"
+    "Test Translation": "La traduction de test",
+    "lang": "Anglais",
+    "ABOUT": "À PROPOS",
+    "MAIN": "PRINCIPALE",
+    "Page Not Found": "La page demandée est introuvable",
+    "Oops something went wrong": "une erreur inattendue est apparue",
+    "Reload Page": "Rafraîchir la page",
+    "abbreviation": "EN"
 }
