@@ -1,4 +1,3 @@
-
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/classnames/classNames';
@@ -23,9 +22,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
         theme = AppLinkTheme.PRIMARY,
         ...otherProps
     } = props;
-    console.log('className', className);
-    console.log('cls[theme]', cls[theme]);
-    console.log(theme);
+
     return (
         <Link
             {...otherProps}

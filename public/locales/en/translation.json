@@ -1,10 +1,11 @@
 {
-    "Test Translation": "Test Translation",
-    "lang": "French",
-    "ABOUT": "ABOUT",
-    "MAIN": "MAIN",
-    "Page Not Found": "Page Not Found",
-    "Oops something went wrong": "Oops something went wrong",
-    "Reload Page": "Reload Page",
-    "abbreviation": "FR"
+  "Test Translation": "Test Translation",
+  "lang": "French",
+  "ABOUT": "ABOUT",
+  "MAIN": "MAIN",
+  "Page Not Found": "Page Not Found",
+  "Oops something went wrong": "Oops something went wrong",
+  "Reload Page": "Reload Page",
+  "abbreviation": "FR",
+  "Login": "Login"
 }
