@@ -55,11 +55,8 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
     const modes: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     };
-    console.log('[cls.opened]:', typeof { [cls.opened]: isOpen });
-    console.log('typeof cls.opned', typeof cls.opened);
-    console.log('modes:', modes);
+
     return (
         <Portal>
             <div className={classNames(cls.Modal, modes, [className])}>
