@@ -7,5 +7,7 @@
   "Oops something went wrong": "Oops something went wrong",
   "Reload Page": "Reload Page",
   "abbreviation": "FR",
-  "Login": "Login"
+  "Login": "Login",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }

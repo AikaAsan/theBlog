@@ -2,7 +2,7 @@ import { Sidebar } from './Sidebar';
 import { screen, fireEvent } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 
-describe('Sidebar', () => {
+describe('Counter', () => {
     test('Sidebar render', () => {
         componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
