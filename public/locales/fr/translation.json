@@ -9,5 +9,7 @@
     "abbreviation": "EN",
     "Login": "Se Connecter",
     "Increment": "Incrément",
-    "Decrement": "Décrément"
+    "Decrement": "Décrément",
+    "username": "nom d'utilisateur",
+    "password": "mot de passe"
 }

@@ -8,7 +8,7 @@ interface LangSwitcherProps {
     short?: boolean;
 }
 
-export const LangSwitcher = ({ className , short}: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {
@@ -20,7 +20,7 @@ export const LangSwitcher = ({ className , short}: LangSwitcherProps) => {
             onClick={toggle}
             theme={ButtonTheme.CLEAR}
         >
-            {t(short ? 'abbreviation': 'lang')}
+            {t(short ? 'abbreviation' : 'lang')}
         </Button>
     );
 };
