@@ -9,5 +9,7 @@
   "abbreviation": "FR",
   "Login": "Login",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "username": "username",
+  "password": "password"
 }
