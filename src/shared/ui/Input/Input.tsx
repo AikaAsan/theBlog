@@ -39,15 +39,15 @@ export const Input = memo((props: InputProps) => {
         setCaretPosition(e.target.value.length);
     };
 
-    const onBlur = () => {
+    const onBlurHandler = () => {
         setIsFocused(false);
     };
 
-    const onFocus = () => {
+    const onFocusHandler = () => {
         setIsFocused(true);
     };
 
-    const onSelect = (e: any) => {
+    const onSelectHandler = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
 
@@ -70,9 +70,9 @@ export const Input = memo((props: InputProps) => {
                     value={value}
                     onChange={onChangeHandler}
                     className={cls.input}
-                    onBlur={onBlur}
-                    onFocus={onFocus}
-                    onSelect={onSelect}
+                    onBlur={onBlurHandler}
+                    onFocus={onFocusHandler}
+                    onSelect={onSelectHandler}
                     {...otherProps}
                 />
                 {isFocused && (
