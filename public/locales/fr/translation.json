@@ -11,5 +11,8 @@
     "Increment": "Incrément",
     "Decrement": "Décrément",
     "username": "nom d'utilisateur",
-    "password": "mot de passe"
+    "password": "mot de passe",
+    "LoginForm": "Formulaire de Connexion",
+    "wrong username or password": "incorrecte du nom d'utilisateur ou du mot de passe.",
+    "Logout": "se déconnecter"
 }
