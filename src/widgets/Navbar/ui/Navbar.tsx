@@ -7,7 +7,6 @@ import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { is } from 'immer/dist/internal';
 
 interface NavbarProps {
     className?: string;
@@ -31,9 +30,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         dispatch(userActions.logout());
         setIsAuthModal(false);
     }, [dispatch]);
-
-    console.log('authData', authData);
-    console.log('isAuthModal', isAuthModal);
 
     if (authData) {
         return (

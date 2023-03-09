@@ -1,11 +1,7 @@
-import {
-    createAsyncThunk,
-    createSlice,
-    isRejectedWithValue,
-} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { User, userActions } from 'entities/User';
-import i18next from 'i18next';
+// import i18next from 'i18next';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 interface LoginByUsernameProps {
@@ -37,7 +33,8 @@ export const loginByUsername = createAsyncThunk<
     } catch (e) {
         console.log(e);
         return thunkAPI.rejectWithValue(
-            i18next.t('wrong username or password')
+            // i18next.t('wrong username or password')
+            'error'
         );
     }
 });
