@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './Text.module.scss';
 
@@ -16,7 +15,7 @@ interface TextProps {
 
 export const Text = (props: TextProps) => {
     const { className, title, text, theme = TextTheme.PRIMARY } = props;
-    const { t } = useTranslation();
+
     return (
         <div
             className={classNames(cls.Text, { [cls[theme]]: true }, [

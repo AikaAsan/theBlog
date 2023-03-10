@@ -1,7 +1,6 @@
 import {
     AnyAction,
     combineReducers,
-    createStore,
     Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
