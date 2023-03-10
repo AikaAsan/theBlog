@@ -11,7 +11,7 @@ interface LangSwitcherProps {
 export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
-    const toggle = () => {
+    const toggle = async () => {
         i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
     };
     return (
@@ -19,7 +19,6 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
             className={classNames(cls.LangSwitcher, {}, [className])}
             onClick={toggle}
             theme={ButtonTheme.CLEAR}
-            
         >
             {t(short ? 'abbreviation' : 'lang')}
         </Button>
