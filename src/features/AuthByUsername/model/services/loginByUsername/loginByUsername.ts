@@ -29,6 +29,7 @@ export const loginByUsername = createAsyncThunk<
         );
         thunkAPI.dispatch(userActions.setAuthData(response.data));
 
+        console.log('response.data', response.data);
         return response.data;
     } catch (e) {
         console.log(e);
