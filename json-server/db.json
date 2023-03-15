@@ -3,19 +3,19 @@
         {
             "id": "1",
             "title": "json-server",
-            "userId":"1"
+            "userId": "1"
         },
         {
             "id": "2",
             "title": "json-server",
-            "userId":"2"
+            "userId": "2"
         }
     ],
     "comments": [
         {
             "id": "1",
             "body": "some comment",
-            "postId":"1"
+            "postId": "1"
         }
     ],
     "users": [
@@ -25,5 +25,14 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "first": "Aika",
+        "lastname": "Carriere",
+        "age": 10,
+        "currency": "CAD",
+        "country": "Canada",
+        "city": "Winnipeg",
+        "username": "admin",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dwoman%2BAvatar&psig=AOvVaw3h7WWvxOP4Tq6Pcnuj38U4&ust=1678989073419000&source=images&cd=vfe&ved=2ahUKEwjb0tjrv979AhXsF2IAHe_uDP8Qr4kDegUIARCJAg"
+    }
 }

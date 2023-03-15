@@ -3,6 +3,7 @@
   "lang": "French",
   "ABOUT": "ABOUT",
   "MAIN": "MAIN",
+  "PROFILE": "PROFILE",
   "Page Not Found": "Page Not Found",
   "Oops something went wrong": "Oops something went wrong",
   "Reload Page": "Reload Page",
@@ -14,5 +15,6 @@
   "password": "password",
   "Login Form": "Login Form",
   "wrong username or password": "wrong username or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile Page": "Profile Page"
 }
