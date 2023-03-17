@@ -1,16 +1,23 @@
 # the-Blog
 ----
+## Reflection 
+This is an ongoing project to practice and learn new tools and practicies.
+
+Technologies used in this project: 
+- 	
+- https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white, https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white, https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white, https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white, https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white, https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white, https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white, https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white
+- 
 ## Architecture of the project
 
-The project is createdaccording to the Feature sliced design methodology 
+The project is created according to the Feature sliced design methodology 
 
 link to the documentation - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
-## Getting Started
-
-### Dependencies
+## Installation and Setup Instructions
 ```
+Clone down this repository. You will need `node`and `npm` installed globally on your machine
 npm install - install dependencies
-npm run start:dev или npm run start:dev:vite - start the project in dev mode
+npm start - start the project on localhost 3000
+npm start:dev:server - start the dev server
 ```
 
 ----
@@ -18,7 +25,7 @@ npm run start:dev или npm run start:dev:vite - start the project in dev mode
 ## Scripts
 
 - `npm run start` - Start frontend on webpack dev server
-- `npm run start:dev` - Запуск frontend проекта на webpack dev server + backend
+- `npm run start:dev:server` - start the dev server (backend)
 - `npm run build:prod` - Build the project in prod mode 
 - `npm run build:dev` - Build the project in dev mode (not minimized)
 - `npm run lint:ts` - start Eslint on ts files
