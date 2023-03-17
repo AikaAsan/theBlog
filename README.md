@@ -4,9 +4,14 @@
 This is an ongoing project to practice and learn new tools and practicies.
 
 Technologies used in this project: 
-- 	
-- https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white, https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white, https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white, https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white, https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white, https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB, https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white, https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white, https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white
-- 
+- Typescript  
+- React 
+- Webpack
+- Redux Toolkit
+- Storybook
+- Jest with React Testing Library
+- Guthub Actions
+
 ## Architecture of the project
 
 The project is created according to the Feature sliced design methodology 
