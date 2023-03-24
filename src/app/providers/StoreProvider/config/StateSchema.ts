@@ -9,7 +9,7 @@ import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
-import { ProfileSchema } from 'pages/ProfilePage';
+import { ProfileSchema } from 'entities/Profile';
 import { To, NavigateOptions } from 'react-router-dom';
 
 export interface StateSchema {
