@@ -18,8 +18,6 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     children: 'Text',
-    theme: '',
-    className: '',
 };
 
 export const Clear = Template.bind({});

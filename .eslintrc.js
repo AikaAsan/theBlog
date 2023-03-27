@@ -69,6 +69,7 @@ module.exports = {
             { ignoreTranspilerName: true, checkContextObjects: false },
         ],
         '@typescript-eslint/no-unused-vars': 'warn',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
