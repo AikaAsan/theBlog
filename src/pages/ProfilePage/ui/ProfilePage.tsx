@@ -1,4 +1,4 @@
-import { fetchProfileData } from 'entities/Profile';
+import { fetchProfileData, ProfileCard } from 'entities/Profile';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -33,7 +33,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
             name={'profile'}
         >
             <div className={classNames(cls.ProfilePage, {}, [className])}>
-                {t('Profile Page')}
+                <ProfileCard />
             </div>
         </DynamicModuleLoader>
     );
