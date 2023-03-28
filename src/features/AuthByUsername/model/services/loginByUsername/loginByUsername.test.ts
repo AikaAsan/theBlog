@@ -51,13 +51,13 @@ describe('loginByUsername.test', () => {
     //         expect(result.meta.requestStatus).toEqual('rejected');
     //         expect(result.payload).toEqual('error');
     //     });
-    let dispatch: Dispatch;
-    let getState: () => StateSchema;
-
-    beforeEach(() => {
-        dispatch = jest.fn();
-        getState = jest.fn();
-    });
+//     let dispatch: Dispatch;
+//     let getState: () => StateSchema;
+// 
+//     beforeEach(() => {
+//         dispatch = jest.fn();
+//         getState = jest.fn();
+//     });
     test('success login', async () => {
         const userValue = { username: 'name', id: '1' };
 

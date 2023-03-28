@@ -1,7 +1,9 @@
 {
-  "PROFILE PAGE": "PROFILE PAGE",
-  "Profile": "Profile",
-  "Edit": "Edit",
-  "Your name": "Your Name",
-  "Your Last Name": "Your Last Name"
+    "PROFILE PAGE": "PROFILE PAGE",
+    "Profile": "Profile",
+    "Edit": "Edit",
+    "Your name": "Your Name",
+    "Your Last Name": "Your Last Name",
+    "Error Occured": "Error occured",
+    "Try ro reload the page": "Try to reload the page"
 }

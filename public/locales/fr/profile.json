@@ -3,5 +3,7 @@
     "Profile": "Le Profile",
     "Edit": "Modifier",
     "Your name": "Votre Nom",
-    "Your Last Name": "Votre Derniere Nom"
+    "Your Last Name": "Votre Derniere Nom",
+    "Error Occured": "Erreur est survenue",
+    "Try ro reload the page": "Essayez de recharger la page"
 }
