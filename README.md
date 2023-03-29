@@ -5,7 +5,7 @@ The Blog app.
 
 Features: 
 - custom webpack configuration: React, Typescript, scss, css modules, testing env (Jest, RTL, Storybook, loki). I decomposed the config for easier editing and updating further on. 
-- implemented architechture according to FSD mathodolody. [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial). Reusable modules with low coupling and high cohesion. 
+- implemented architechture according to FSD methodolody. [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial). Reusable modules with low coupling and high cohesion. 
 - lazy loading of pages, components and reducers
 - reusable UI library with more than 15 accessible and sematic components.
 - internationalization 
