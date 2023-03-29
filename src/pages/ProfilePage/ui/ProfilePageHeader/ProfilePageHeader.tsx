@@ -2,9 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classnames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import cls from './ProfilePageHeader.module.scss';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text } from 'shared/ui/Text/ui/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import {
+    getProfileReadonly,
+    profileActions,
+    updateProfileData,
+} from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -27,8 +31,9 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     const onSaveHandler = useCallback(() => {
-        dispatch(profileActions.cancelEdit());
+        dispatch(updateProfileData());
     }, [dispatch]);
+
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Profile')} />
