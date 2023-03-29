@@ -1,16 +1,25 @@
 # the-Blog
 ----
 ## Reflection 
-This is an ongoing project to practice and learn new tools and practicies.
+The Blog app. 
+
+Features: 
+- custom webpack configuration: React, Typescript, scss, css modules, testing env (Jest, RTL, Storybook, loki). I decomposed the config for easier editing and updating further on. 
+- implemented architechture according to FSD mathodolody. [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial). Reusable modules with low coupling and high cohesion. 
+- lazy loading of pages, components and reducers
+- reusable UI library with more than 15 accessible and sematic components.
+- internationalization 
+
 
 Technologies used in this project: 
 - Typescript  
-- React 
+- React, React Router
 - Webpack
 - Redux Toolkit
 - Storybook
 - Jest with React Testing Library
-- Guthub Actions
+- Github Actions
+- i18Next 
 
 ## Architecture of the project
 
@@ -54,7 +63,7 @@ Types of test are used in the project:
 1) unit tests, Jest - `npm run test:unit`
 2) unit test for components with React testing library -`npm run test:unit`
 
-Test documentaion - [документация тестирование](/docs/tests.md)
+Test documentaion - (/docs/tests.md)
 
 ----
 
@@ -74,8 +83,6 @@ documentation [Storybook](/docs/storybook.md)
 ## Configuration
 
 1. Webpack - ./config/build
-
-Webpack is adapted to the needs of the project
 
 All the configuration is in /config
 - /config/build -  webpack config
