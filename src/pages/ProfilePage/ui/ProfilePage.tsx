@@ -21,6 +21,7 @@ import cls from './ProfilePage.module.scss';
 import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -82,6 +83,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [dispatch]
     );
 
+    const onChangeCountryHandler = useCallback(
+        (country?: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch]
+    );
+
     return (
         <DynamicModuleLoader
             reducers={reducers}
@@ -102,6 +110,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeUsername={onChangeUsernameHandler}
                     onChangeAvatar={onChangeAvatarHandler}
                     onChangeCurrency={onChangeCurrencyHandler}
+                    onChangeCountry={onChangeCountryHandler}
                 />
             </div>
         </DynamicModuleLoader>

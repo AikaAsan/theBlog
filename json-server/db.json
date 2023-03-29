@@ -31,6 +31,7 @@
     "city": "Bishkek",
     "username": "admin",
     "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU",
-    "currency": "USD"
+    "currency": "EUR",
+    "country": "Mexico"
   }
 }
