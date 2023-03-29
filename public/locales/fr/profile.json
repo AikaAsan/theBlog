@@ -5,5 +5,12 @@
     "Your name": "Votre Nom",
     "Your Last Name": "Votre Derniere Nom",
     "Error Occured": "Erreur est survenue",
-    "Try ro reload the page": "Essayez de recharger la page"
+    "Try ro reload the page": "Essayez de recharger la page",
+    "Cancel": "Annuler",
+    "Save": "Sauvegarder",
+    "Your Age": "Votre l'age",
+    "Currency": "Devise",
+    "City": "Ville",
+    "Username": "Nom d'utilisateur",
+    "Provide link to the avatar": "fournir un lien vers l'avatar"
 }

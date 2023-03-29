@@ -1,9 +1,17 @@
 {
-    "PROFILE PAGE": "PROFILE PAGE",
-    "Profile": "Profile",
-    "Edit": "Edit",
-    "Your name": "Your Name",
-    "Your Last Name": "Your Last Name",
-    "Error Occured": "Error occured",
-    "Try ro reload the page": "Try to reload the page"
+  "PROFILE PAGE": "PROFILE PAGE",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Your name": "Your Name",
+  "Your Last Name": "Your Last Name",
+  "Error Occured": "Error occured",
+  "Try ro reload the page": "Try to reload the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your Age": "Your age",
+  "Currency": "Currency",
+  "City": "City",
+  "Username": "Username",
+  "Avatar": "Avatar",
+  "Provide link to the avatar": "Provide link to the avatar"
 }
