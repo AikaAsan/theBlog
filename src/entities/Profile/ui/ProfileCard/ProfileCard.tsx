@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames, Modes } from 'shared/lib/classnames/classNames';
 import cls from './ProfileCard.module.scss';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Profile } from 'entities/Profile';
 import { Loader } from 'shared/ui/Loader';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface ProfileCardProps {
     className?: string;
@@ -64,9 +65,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
             </div>
         );
     }
+
+    const modes: Modes = {
+        [cls.editing]: !readonly,
+    };
+
     return (
-        <div className={classNames(cls.ProfileCard, {}, [className])}>
+        <div className={classNames(cls.ProfileCard, modes, [className])}>
             <div className={cls.data}>
+                {data?.avatar && (
+                    <div className={cls.avatarWrapper}>
+                        <Avatar src={data?.avatar} alt={`avatar`} />
+                    </div>
+                )}
                 <Input
                     value={data?.first}
                     placeholder={t('Your name')}
