@@ -6,6 +6,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { Profile } from 'entities/Profile';
 import { Loader } from 'shared/ui/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Select } from 'shared/ui/Select/Select';
+import { Currency } from 'shared/const/common';
 
 interface ProfileCardProps {
     className?: string;
@@ -78,6 +80,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         <Avatar src={data?.avatar} alt={`avatar`} />
                     </div>
                 )}
+
                 <Input
                     value={data?.first}
                     placeholder={t('Your name')}
@@ -113,6 +116,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readonly={readonly}
+                />
+                <Select
+                    label={`Currency`}
+                    options={[
+                        { value: Currency.CAD, content: Currency.CAD },
+                        { value: Currency.USD, content: Currency.USD },
+                        { value: Currency.EUR, content: Currency.EUR },
+                    ]}
                 />
             </div>
         </div>
