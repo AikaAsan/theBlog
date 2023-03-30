@@ -13,5 +13,12 @@
   "City": "City",
   "Username": "Username",
   "Avatar": "Avatar",
-  "Provide link to the avatar": "Provide link to the avatar"
+  "Provide link to the avatar": "Provide link to the avatar",
+  "Server error": "Internal server error",
+  "Incorrect country": "Incorrect country",
+  "No data": "No Data",
+  "Please provide Name and Lastname": "Please provide Name and Lastname",
+  "Incorrect age": "Incorrect age",
+  "Profile Page": "Profile Page",
+  "Country": "Country"
 }

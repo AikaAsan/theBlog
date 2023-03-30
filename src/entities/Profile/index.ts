@@ -1,8 +1,10 @@
-
-
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 
-export { Profile, ProfileSchema } from './model/types/profile';
+export {
+    Profile,
+    ProfileSchema,
+    ValidateProfileError,
+} from './model/types/profile';
 
 export { profileActions, profileReducer } from './model/slice/profileSlice';
 
@@ -20,3 +22,4 @@ export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProf
 
 export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
 
+export { getProfileValidationErrors } from './model/selectors/getProfileValidationErrors/getProfileValidationErrors';

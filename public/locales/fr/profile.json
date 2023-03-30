@@ -12,5 +12,12 @@
     "Currency": "Devise",
     "City": "Ville",
     "Username": "Nom d'utilisateur",
-    "Provide link to the avatar": "fournir un lien vers l'avatar"
+    "Provide link to the avatar": "fournir un lien vers l'avatar",
+    "Server error": "d'erreur interne du serveur",
+    "Incorrect country": "Pays d'origine incorrects",
+    "No data": "No Data",
+    "Please provide Name and Lastname": "Veuillez indiquer votre nom et prenom",
+    "Incorrect age": "L'age incorrect",
+    "Profile Page": "Le Page du Profile",
+    "Country": "Pays d'origine"
 }
