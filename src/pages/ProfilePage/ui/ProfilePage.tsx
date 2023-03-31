@@ -7,7 +7,7 @@ import {
     getProfileValidationErrors,
     profileActions,
     ProfileCard,
-    ValidateProfileError,
+    ValidationProfileError,
 } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -43,17 +43,19 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const validationErrors = useSelector(getProfileValidationErrors);
 
     const validationErrorTranslations = {
-        [ValidateProfileError.SERVER_ERROR]: t('Server error'),
-        [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect country'),
-        [ValidateProfileError.NO_DATA]: t('No data'),
-        [ValidateProfileError.INCORRECT_USER_DATA]: t(
+        [ValidationProfileError.SERVER_ERROR]: t('Server error'),
+        [ValidationProfileError.INCORRECT_COUNTRY]: t('Incorrect country'),
+        [ValidationProfileError.NO_DATA]: t('No data'),
+        [ValidationProfileError.INCORRECT_USER_DATA]: t(
             'Please provide Name and Lastname'
         ),
-        [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
+        [ValidationProfileError.INCORRECT_AGE]: t('Incorrect age'),
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstnameHandler = useCallback(

@@ -3,7 +3,7 @@ export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 export {
     Profile,
     ProfileSchema,
-    ValidateProfileError,
+    ValidationProfileError,
 } from './model/types/profile';
 
 export { profileActions, profileReducer } from './model/slice/profileSlice';
