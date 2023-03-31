@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ProfileCard } from './ProfileCard';
-import AvatarImg from 'shared/assets/tests/storybook.jpg';
+// import AvatarImg from 'shared/assets/tests/storybook.jpg';
 
 export default {
     title: 'entities/ProfileCard',
@@ -25,7 +25,7 @@ Primary.args = {
         city: 'Bishkek',
         currency: Currency.CAD,
         country: Country.Canada,
-        avatar: AvatarImg,
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
     },
 };
 
