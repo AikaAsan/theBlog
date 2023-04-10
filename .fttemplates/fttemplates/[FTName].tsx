@@ -1,14 +1,14 @@
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './[FTName].module.scss';
 
 interface [FTName]Props {
    className?: string;
 }
 
-export const [FTName]: FC<[FTName]Props> = (props) => {
+const [FTName]: FC<[FTName]Props> = (props) => {
    const { className } = props;
    const { t } = useTranslation()
 
@@ -18,3 +18,5 @@ export const [FTName]: FC<[FTName]Props> = (props) => {
       </div>
    );
 }
+
+export default memo([FTName]);
