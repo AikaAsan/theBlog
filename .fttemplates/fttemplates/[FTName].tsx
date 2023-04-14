@@ -8,7 +8,7 @@ interface [FTName]Props {
    className?: string;
 }
 
-const [FTName]: FC<[FTName]Props> = (props) => {
+export const [FTName]: FC<[FTName]Props> = memo((props: [FTName]Props) => {
    const { className } = props;
    const { t } = useTranslation()
 
@@ -16,7 +16,5 @@ const [FTName]: FC<[FTName]Props> = (props) => {
       <div className={classNames(cls.[FTName | camelcase], {}, [className])}>
 
       </div>
-   );
-}
-
-export default memo([FTName]);
+   )
+});
