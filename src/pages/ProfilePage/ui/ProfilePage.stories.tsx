@@ -5,7 +5,6 @@ import { Currency } from 'entities/Currency';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ProfilePage from './ProfilePage';
-import AvatarImg from 'shared/assets/tests/storybook.jpg';
 
 export default {
     title: 'pages/ProfilePage',
@@ -33,7 +32,7 @@ Light.decorators = [
                 city: 'Bishkek',
                 currency: Currency.CAD,
                 country: Country.Canada,
-                avatar: AvatarImg,
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
             },
         },
     }),
@@ -53,7 +52,7 @@ Dark.decorators = [
                 city: 'Bishkek',
                 currency: Currency.CAD,
                 country: Country.Canada,
-                avatar: AvatarImg,
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
             },
         },
     }),
