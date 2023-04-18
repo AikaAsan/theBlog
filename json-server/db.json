@@ -103,7 +103,16 @@
         {
             "id": "1",
             "username": "admin",
-            "password": "123"
+            "password": "123",
+            "role": "ADMIN",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
+        },
+        {
+            "id": "2",
+            "username": "user",
+            "password": "123",
+            "role": "USER",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
         }
     ],
     "profile": {
@@ -111,7 +120,7 @@
         "lastname": "Carriere",
         "city": "Bishkek",
         "username": "admin",
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fprofile-avatar&psig=AOvVaw2SC9VJJ54eez0BY2F1eWje&ust=1681918511399000&source=images&cd=vfe&ved=0CBMQjhxqFwoTCKiYr-3gs_4CFQAAAAAdAAAAABAE",
         "currency": "EUR",
         "country": "Mexico"
     }

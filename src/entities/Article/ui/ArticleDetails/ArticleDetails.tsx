@@ -26,6 +26,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 interface ArticleDetailsProps {
     className?: string;
     id: string;
@@ -53,11 +54,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
                         block={block}
                         className={cls.block}
                     />
-                // <p>CODE</p>
                 );
             case ArticleBlockType.IMAGE:
                 return (
-                // <p>IMAGE</p>
                     <ArticleImageBlockComponent
                         block={block}
                         key={block.id}
@@ -65,7 +64,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
                 );
             case ArticleBlockType.TEXT:
                 return (
-                // <p>TEXT</p>
                     <ArticleTextBlockComponent
                         key={block.id}
                         block={block}
@@ -76,12 +74,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
             }
         }, []);
 
-        useEffect(() => {
-            if (__PROJECT__ !== 'storybook') {
-                dispatch(fetchArticleById(id));
-            }
-        }, [dispatch, id]);
-        console.log('renderBlock, ', renderBlock);
+        useInitialEffect(() => {
+            dispatch(fetchArticleById(id));
+        });
+
         let content;
 
         if (isLoading) {
