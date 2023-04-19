@@ -84,13 +84,14 @@
         {
             "id": "1",
             "body": "some comment",
-            "postId": "1"
+            "articleId": "1",
+            "userId": "2"
         },
         {
             "id": "2",
             "text": "some comment 2",
             "articleId": "1",
-            "userId": "1"
+            "userId": "2"
         },
         {
             "id": "3",
@@ -112,16 +113,29 @@
             "username": "user",
             "password": "123",
             "role": "USER",
-            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
+            "avatar": "https://cdn.dribbble.com/users/3734064/screenshots/14348087/media/a99ab961c8f8c7d29b5f7136e0b19ca4.png?compress=1&resize=400x300&vertical=top"
         }
     ],
-    "profile": {
-        "first": "Aika",
-        "lastname": "Carriere",
-        "city": "Bishkek",
-        "username": "admin",
-        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fprofile-avatar&psig=AOvVaw2SC9VJJ54eez0BY2F1eWje&ust=1681918511399000&source=images&cd=vfe&ved=0CBMQjhxqFwoTCKiYr-3gs_4CFQAAAAAdAAAAABAE",
-        "currency": "EUR",
-        "country": "Mexico"
-    }
+    "profile": [
+        {
+            "id": "1",
+            "first": "Aika",
+            "lastname": "Carriere",
+            "city": "Bishkek",
+            "username": "admin",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU",
+            "currency": "EUR",
+            "country": "Mexico"
+        },
+        {
+            "id": "2",
+            "first": "Mailo",
+            "lastname": "Krup",
+            "city": "Miami",
+            "username": "user",
+            "avatar": "https://cdn.dribbble.com/users/3734064/screenshots/14348087/media/a99ab961c8f8c7d29b5f7136e0b19ca4.png?compress=1&resize=400x300&vertical=top",
+            "currency": "EUR",
+            "country": "Canada"
+        }
+    ]
 }

@@ -6,6 +6,9 @@ import { Comment } from '../../model/types/comment';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/ui/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+
 interface CommentCardProps {
     className?: string;
     comment?: Comment;
@@ -41,7 +44,10 @@ export const CommentCard: FC<CommentCardProps> = memo(
         return (
             // eslint-disable-next-line i18next/no-literal-string
             <div className={classNames(cls.commentCard, {}, [className])}>
-                <div className={cls.header}>
+                <AppLink
+                    className={cls.header}
+                    to={`${RoutePath.profile}${comment?.user.id}`}
+                >
                     {comment?.user.avatar ? (
                         <Avatar
                             size={30}
@@ -53,7 +59,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
                         title={comment?.user.username}
                         className={cls.username}
                     />
-                </div>
+                </AppLink>
                 <Text text={comment?.text} className={cls.text} />
             </div>
         );
