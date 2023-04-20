@@ -22,7 +22,12 @@ export const CommentCard: FC<CommentCardProps> = memo(
 
         if (isLoading) {
             return (
-                <div className={classNames(cls.commentCard, {}, [className])}>
+                <div
+                    className={classNames(cls.commentCard, {}, [
+                        className,
+                        cls.loading,
+                    ])}
+                >
                     <div className={cls.header}>
                         <Skeleton border='50%' width={30} height={30} />
                         <Skeleton
@@ -40,6 +45,10 @@ export const CommentCard: FC<CommentCardProps> = memo(
                     </div>
                 </div>
             );
+        }
+
+        if (!comment) {
+            return null;
         }
         return (
             // eslint-disable-next-line i18next/no-literal-string
