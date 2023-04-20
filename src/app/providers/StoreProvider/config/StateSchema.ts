@@ -8,11 +8,12 @@ import {
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
+import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'entities/Profile';
 import { To, NavigateOptions } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from 'features/AddCommentForm';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -23,6 +24,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
+    addCommentForm?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
