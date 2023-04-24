@@ -44,6 +44,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
         const article = useSelector(getArticleDetailsData);
         const error = useSelector(getArticleDetailsError);
 
+        console.log('article', article);
         const renderBlock = useCallback((block: ArticleBlock) => {
             switch (block.type) {
             case ArticleBlockType.CODE:

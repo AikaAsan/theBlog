@@ -25,8 +25,6 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { TextTheme, Text } from 'shared/ui/Text/ui/Text';
-import { useParams } from 'react-router-dom';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -43,7 +41,6 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
     const validationErrors = useSelector(getProfileValidationErrors);
-    const { id } = useParams<{ id: string }>();
 
     const validationErrorTranslations = {
         [ValidationProfileError.SERVER_ERROR]: t('Server error'),
@@ -54,11 +51,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         ),
         [ValidationProfileError.INCORRECT_AGE]: t('Incorrect age'),
     };
-    useInitialEffect(() => {
-        if (id) {
-            dispatch(fetchProfileData(id));
+
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
         }
-    });
+    }, [dispatch]);
 
     const onChangeFirstnameHandler = useCallback(
         (value?: string) => {
@@ -137,6 +135,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrencyHandler}
                     onChangeCountry={onChangeCountryHandler}
                 />
+                {/* {t('Profile Page')} */}
             </div>
         </DynamicModuleLoader>
     );

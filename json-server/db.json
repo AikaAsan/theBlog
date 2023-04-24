@@ -1,167 +1,127 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": "2"
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "Javascript news",
-      "subtitle": "What is new in JavaScript in 2023?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    "posts": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Header of the block",
-          "paragraphs": [
-            "The popularity of JavaScript has increased dramatically throughout the years. With the recent boom in the tech industry, it is one of the most commonly used programming languages among the developers. And to keep itself up with the market, the recent trends are booming the development market extensively. In this blog we’ll discuss the latest developments and new features expected to appear in JavaScript by 2023."
-          ]
+            "id": "1",
+            "title": "json-server",
+            "userId": "1"
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
-        },
-        {
-          "id": "5",
-          "type": "TEXT",
-          "title": "Header of the block",
-          "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Picture 1 - screenshot"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
-        },
-        {
-          "id": "7",
-          "type": "TEXT",
-          "title": "Header of the block",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
-            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
-          ]
-        },
-        {
-          "id": "8",
-          "type": "IMAGE",
-          "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
-          "title": "Рисунок 1 - скриншот сайта"
-        },
-        {
-          "id": "9",
-          "type": "TEXT",
-          "title": "Header of the block",
-          "paragraphs": [
-            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
-          ]
+            "id": "2",
+            "title": "json-server",
+            "userId": "2"
         }
-      ]
+    ],
+    "articles": [
+        {
+            "id": "1",
+            "title": "Javascript news",
+            "subtitle": "What is new in JavaScript in 2023?",
+            "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+            "views": 1022,
+            "createdAt": "26.02.2023",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Header of the block",
+                    "paragraphs": [
+                        "The popularity of JavaScript has increased dramatically throughout the years. With the recent boom in the tech industry, it is one of the most commonly used programming languages among the developers. And to keep itself up with the market, the recent trends are booming the development market extensively. In this blog we’ll discuss the latest developments and new features expected to appear in JavaScript by 2023."
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+                },
+                {
+                    "id": "5",
+                    "type": "TEXT",
+                    "title": "Header of the block",
+                    "paragraphs": [
+                        "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+                        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+                    ]
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Picture 1 - screenshot"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+                },
+                {
+                    "id": "7",
+                    "type": "TEXT",
+                    "title": "Header of the block",
+                    "paragraphs": [
+                        "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+                        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
+                    ]
+                },
+                {
+                    "id": "8",
+                    "type": "IMAGE",
+                    "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+                    "title": "Рисунок 1 - скриншот сайта"
+                },
+                {
+                    "id": "9",
+                    "type": "TEXT",
+                    "title": "Header of the block",
+                    "paragraphs": [
+                        "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+                    ]
+                }
+            ]
+        }
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "body": "some comment",
+            "postId": "1"
+        },
+        {
+            "id": "2",
+            "text": "some comment 2",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "3",
+            "text": "some comment 3",
+            "articleId": "1",
+            "userId": "1"
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "role": "ADMIN",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
+        },
+        {
+            "id": "2",
+            "username": "user",
+            "password": "123",
+            "role": "USER",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
+        }
+    ],
+    "profile": {
+        "first": "Aika",
+        "lastname": "Carriere",
+        "city": "Bishkek",
+        "username": "admin",
+        "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fprofile-avatar&psig=AOvVaw2SC9VJJ54eez0BY2F1eWje&ust=1681918511399000&source=images&cd=vfe&ved=0CBMQjhxqFwoTCKiYr-3gs_4CFQAAAAAdAAAAABAE",
+        "currency": "EUR",
+        "country": "Mexico"
     }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "body": "some comment",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "KAJSVH;KUHADSFVLJN",
-      "id": "hTudiX2"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Test Test ",
-      "id": "A1oKq6r"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "another test",
-      "id": "EQNa3dw"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "testing",
-      "id": "gwF5mYD"
-    }
-  ],
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "role": "ADMIN",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU"
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "123",
-      "role": "USER",
-      "avatar": "https://cdn.dribbble.com/users/3734064/screenshots/14348087/media/a99ab961c8f8c7d29b5f7136e0b19ca4.png?compress=1&resize=400x300&vertical=top"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "first": "Aika",
-      "lastname": "Carriere",
-      "city": "Bishkek",
-      "username": "admin",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU",
-      "currency": "EUR",
-      "country": "Mexico"
-    },
-    {
-      "id": "2",
-      "first": "Mailo K",
-      "lastname": "Krup",
-      "city": "Miami",
-      "username": "user",
-      "avatar": "https://cdn.dribbble.com/users/3734064/screenshots/14348087/media/a99ab961c8f8c7d29b5f7136e0b19ca4.png?compress=1&resize=400x300&vertical=top",
-      "currency": "EUR",
-      "country": "Canada"
-    }
-  ]
 }

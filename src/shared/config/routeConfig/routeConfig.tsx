@@ -4,6 +4,7 @@ import { RouteProps } from 'react-router-dom';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlesPage } from 'pages/ArticlesPage';
+import { electron } from 'webpack';
 import { ArticleDeatilsPage } from 'pages/ArticleDetailsPage';
 
 export type AppRoutesProps = RouteProps & {
@@ -22,7 +23,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/', //+id
+    [AppRoutes.PROFILE]: '/profile',
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', //+id
     // goes to NOT_FOUND if all the above routes didnt work
@@ -39,7 +40,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         element: <AboutPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: `${RoutePath.profile}:id`,
+        path: RoutePath.profile,
         element: <ProfilePage />,
         authOnly: true,
     },
