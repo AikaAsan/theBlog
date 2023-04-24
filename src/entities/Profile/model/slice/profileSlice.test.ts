@@ -7,12 +7,7 @@ import {
     updateProfileData,
     ValidationProfileError,
 } from 'entities/Profile';
-import { LoginSchema } from 'features/AuthByUsername';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import {
-    loginReducer,
-    loginActions,
-} from 'features/AuthByUsername/model/slice/loginSlice';
+
 
 const data = {
     first: 'Aika',

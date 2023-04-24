@@ -49,11 +49,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         );
     }
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-            removeAfterUnmount
-            name={`articleDetailsComments`}
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >

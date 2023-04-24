@@ -1,20 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Article } from 'entities/Article';
-import { ArticleType, ArticleBlockType } from 'entities/Article/model/types/article';
+import {
+    ArticleType,
+    ArticleBlockType,
+} from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
-
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
 
 const article: Article = {
     id: '1',
@@ -56,7 +47,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.CODE,
-            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
@@ -83,12 +74,31 @@ const article: Article = {
         },
     ],
 };
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: article,
+
+export default {
+    title: 'pages/ArticleDetailsPage',
+    component: ArticleDetailsPage,
+    parameters: {
+        router: {
+            path: '/articles/:id',
+            route: '/articles/1',
         },
-    }),
-];
+    },
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleDetailsPage>;
+
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
+
+// export const Normal = Template.bind({});
+// Normal.args = {};
+// Normal.decorators = [
+//     StoreDecorator({
+//         articleDetails: {
+//             data: article,
+//         },
+//     }),
+// ];
