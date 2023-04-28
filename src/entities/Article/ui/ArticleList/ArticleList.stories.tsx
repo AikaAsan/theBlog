@@ -1,11 +1,22 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article } from 'entities/Article';
+import { Article, ArticleView } from 'entities/Article';
 import {
     ArticleType,
     ArticleBlockType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+} from '../../model/types/article';
+import { ArticleList } from './ArticleList';
+
+export default {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleList>;
+
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 const article: Article = {
     id: '1',
@@ -52,7 +63,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.CODE,
-            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
@@ -80,30 +91,36 @@ const article: Article = {
     ],
 };
 
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    parameters: {
-        router: {
-            path: '/articles/:id',
-            route: '/articles/1',
-        },
-    },
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+export const LoadingList = Template.bind({});
+LoadingList.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.LIST,
+};
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
+export const LoadingGrid = Template.bind({});
+LoadingGrid.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.GRID,
+};
 
-// export const Normal = Template.bind({});
-// Normal.args = {};
-// Normal.decorators = [
-//     StoreDecorator({
-//         articleDetails: {
-//             data: article,
-//         },
-//     }),
-// ];
+export const List = Template.bind({});
+List.args = {
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
+    isLoading: false,
+    view: ArticleView.LIST,
+};
+
+export const Grid = Template.bind({});
+Grid.args = {
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
+    isLoading: false,
+    view: ArticleView.GRID,
+};

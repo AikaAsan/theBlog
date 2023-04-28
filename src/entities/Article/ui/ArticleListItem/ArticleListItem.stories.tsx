@@ -1,11 +1,23 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article } from 'entities/Article';
 import {
+    Article,
     ArticleType,
     ArticleBlockType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+    ArticleView,
+} from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
+
+export default {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
 
 const article: Article = {
     id: '1',
@@ -13,7 +25,7 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Aika',
-        // avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
     },
     subtitle: 'What is new in JavaScript in 2023?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
@@ -52,7 +64,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.CODE,
-            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
@@ -80,30 +92,14 @@ const article: Article = {
     ],
 };
 
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    parameters: {
-        router: {
-            path: '/articles/:id',
-            route: '/articles/1',
-        },
-    },
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+export const List = Template.bind({});
+List.args = {
+    view: ArticleView.LIST,
+    article,
+};
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
-
-// export const Normal = Template.bind({});
-// Normal.args = {};
-// Normal.decorators = [
-//     StoreDecorator({
-//         articleDetails: {
-//             data: article,
-//         },
-//     }),
-// ];
+export const Grid = Template.bind({});
+Grid.args = {
+    view: ArticleView.GRID,
+    article,
+};

@@ -1,0 +1,15 @@
+.LIST {
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.GRID {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+        margin-bottom: 30px;
+        margin-right: 30px;
+    }
+}

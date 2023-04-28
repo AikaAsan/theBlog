@@ -2,7 +2,7 @@
 import { ArticleDetails } from 'entities/Article';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import { Text } from 'shared/ui/Text/ui/Text';
@@ -21,6 +21,8 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/AddCommentForArticle/AddCommentForArticle';
+import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -35,6 +37,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch();
     const comments = useSelector(getArticleComments.selectAll);
+    const navigate = useNavigate();
 
     const commentsIsLoading = useSelector(getArticleDetailsCommentsisLoading);
 
@@ -44,6 +47,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         },
         [dispatch]
     );
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -66,6 +72,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <div
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
+                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                    {t('back to the list')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text title={t('Comments')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendCommentHandler} />
