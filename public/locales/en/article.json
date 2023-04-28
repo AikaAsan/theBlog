@@ -1,8 +1,10 @@
 {
-    "Article is not found": "Article is not found",
-    "Error Occured": "Error occured",
-    "Comments": "Comments",
-    "no comments yet": "No comments yet",
-    "add comment": "Add comment",
-    "Submit": "Submit"
+  "Article is not found": "Article is not found",
+  "Error Occured": "Error occured",
+  "Comments": "Comments",
+  "no comments yet": "No comments yet",
+  "add comment": "Add comment",
+  "Submit": "Submit",
+  "read...": "Read",
+  "back to the list": "back to the list"
 }
