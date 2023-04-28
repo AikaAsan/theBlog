@@ -10,6 +10,11 @@ import ArticleDetailsPage from './ArticleDetailsPage';
 const article: Article = {
     id: '1',
     title: 'Javascript news',
+    user: {
+        id: '1',
+        username: 'Aika',
+        // avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSttNLsnXTX0s2-ARH0QUI5Fhim5SXBl8irlA&usqp=CAU',
+    },
     subtitle: 'What is new in JavaScript in 2023?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
