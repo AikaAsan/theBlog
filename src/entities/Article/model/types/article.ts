@@ -39,7 +39,7 @@ export enum ArticleView {
     GRID = 'GRID',
 }
 export interface Article {
-    id: string | undefined;
+    id: string; // | undefined;
     title: string;
     user: User;
     subtitle: string;
