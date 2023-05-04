@@ -23,6 +23,7 @@ import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddComment
 import { addCommentForArticle } from '../../model/services/AddCommentForArticle/AddCommentForArticle';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -56,11 +57,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     });
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 {t('Article is not found ')}
-            </div>
+            </Page>
         );
     }
     return (
@@ -69,7 +70,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             removeAfterUnmount
             name={`articleDetailsComments`}
         >
-            <div
+            <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
@@ -82,7 +83,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     comments={comments}
                     isLoading={commentsIsLoading}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
