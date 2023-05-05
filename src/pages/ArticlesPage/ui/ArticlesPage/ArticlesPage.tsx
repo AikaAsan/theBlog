@@ -9,7 +9,6 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -29,6 +28,7 @@ import cls from './ArticlesPage.module.scss';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { PageError } from 'widgets/PageError';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
@@ -51,24 +51,17 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const onChangeView = useCallback(
         (view: ArticleView) => {
             dispatch(articlesPageActions.setView(view));
-            console.log('clicked');
         },
         [dispatch]
     );
-    const onLoadNextPart = useCallback(() => {
-        console.log('onLoadNext fired');
 
+    const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
         console.log('intital effect in Articles page');
-        dispatch(articlesPageActions.initialState());
-        dispatch(
-            fetchArticlesList({
-                page: 1,
-            })
-        );
+        dispatch(initArticlesPage());
     });
 
     if (error) {
@@ -76,7 +69,11 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} name={`articlesPage`}>
+        <DynamicModuleLoader
+            reducers={reducers}
+            name={`articlesPage`}
+            removeAfterUnmount={false}
+        >
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.articlesPage, {}, [className])}
