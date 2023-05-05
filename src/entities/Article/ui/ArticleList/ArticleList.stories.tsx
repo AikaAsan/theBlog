@@ -1,9 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Article, ArticleView } from 'entities/Article';
-import {
-    ArticleType,
-    ArticleBlockType,
-} from '../../model/types/article';
+import { ArticleType, ArticleBlockType } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 export default {
@@ -96,6 +93,7 @@ LoadingList.args = {
     articles: [],
     isLoading: true,
     view: ArticleView.LIST,
+
 };
 
 export const LoadingGrid = Template.bind({});
@@ -110,6 +108,7 @@ List.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
+        key: index,
     })),
     isLoading: false,
     view: ArticleView.LIST,
@@ -120,6 +119,7 @@ Grid.args = {
     articles: new Array(9).fill(0).map((item, index) => ({
         ...article,
         id: String(index),
+        key: index,
     })),
     isLoading: false,
     view: ArticleView.GRID,

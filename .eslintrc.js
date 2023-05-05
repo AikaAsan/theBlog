@@ -71,6 +71,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'react/jsx-key': 'off',
     },
     globals: {
         __IS_DEV__: true,

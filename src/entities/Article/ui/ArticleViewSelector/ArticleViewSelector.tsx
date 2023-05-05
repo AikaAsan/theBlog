@@ -34,13 +34,11 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
             onViewClick?.(newView);
         };
 
-     
         return (
             <div
                 className={classNames(cls.ArticleViewSelector, {}, [className])}
             >
                 {viewTypes.map((viewType) => {
-                
                     return (
                         <Button
                             theme={ButtonTheme.CLEAR}
@@ -52,6 +50,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
                                 className={classNames('', {
                                     [cls.notSelected]: viewType.view !== view,
                                 })}
+                                key={viewType.view}
                                 // className={cls.notSelected}
                             />
                         </Button>
