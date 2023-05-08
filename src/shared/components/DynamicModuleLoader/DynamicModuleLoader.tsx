@@ -21,7 +21,24 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     // to fix
     const store = useStore() as ReduxStoreWithManager;
     useEffect(() => {
+        // const mountedReducers = store.reducerManager.getReducerMap();
+
+        const mountedReducers = store.reducerManager.getMountedReducers();
+
+        console.log('mountedReducers', mountedReducers);
+
         Object.entries(reducers).forEach(([name, reducer]) => {
+            const mounted = mountedReducers[name as StateSchemaKey];
+
+            console.log('mounted', mounted);
+
+            //add new reducer if its not in the list
+            // profileReducer is not behaving as expected
+            // if (!mounted) {
+            //     store.reducerManager.add(name as StateSchemaKey, reducer);
+            //     dispatch({ type: `@INIT  ${name} reducer` });
+            // }
+
             store.reducerManager.add(name as StateSchemaKey, reducer);
             dispatch({ type: `@INIT  ${name} reducer` });
         });
@@ -38,3 +55,6 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     }, []);
     return <>{children}</>;
 };
+function getReducerMap() {
+    throw new Error('Function not implemented.');
+}

@@ -37,14 +37,12 @@ export const ArticleList: FC<ArticleListProps> = memo(
 
         const renderArticle = (article: Article) => {
             return (
-                <div>
-                    <ArticleListItem
-                        article={article}
-                        view={view}
-                        key={article.id}
-                        className={cls.card}
-                    />
-                </div>
+                <ArticleListItem
+                    article={article}
+                    view={view}
+                    key={article.id}
+                    className={cls.card}
+                />
             );
         };
 

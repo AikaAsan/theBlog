@@ -22,7 +22,7 @@ describe('fetchNextArticlesPage.test', () => {
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
     });
-    test('fetchArticleList not called', async () => {
+    test('fetchNextArticleList not called', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
             articlesPage: {
                 page: 2,
@@ -39,7 +39,7 @@ describe('fetchNextArticlesPage.test', () => {
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
     });
-    test('fetchArticleList not called, isLoading true', async () => {
+    test('fetchNextArticleList not called, isLoading true', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
             articlesPage: {
                 page: 2,
