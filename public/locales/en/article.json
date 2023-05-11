@@ -1,10 +1,18 @@
 {
-  "Article is not found": "Article is not found",
-  "Error Occured": "Error occured",
-  "Comments": "Comments",
-  "no comments yet": "No comments yet",
-  "add comment": "Add comment",
-  "Submit": "Submit",
-  "read...": "Read",
-  "back to the list": "back to the list"
+    "Article is not found": "Article is not found",
+    "Error Occured": "Error occured",
+    "Comments": "Comments",
+    "no comments yet": "No comments yet",
+    "add comment": "Add comment",
+    "Submit": "Submit",
+    "read...": "Read",
+    "back to the list": "back to the list",
+    "Sort By": "Sort By",
+    "Search": "Search",
+    "Filter By": "Filter By",
+    "date created": "date created",
+    "title": "title",
+    "views": "views",
+    "asc": "asc",
+    "desc": "desc"
 }
