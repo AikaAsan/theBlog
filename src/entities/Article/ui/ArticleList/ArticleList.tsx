@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './ArticleList.module.scss';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-
+import { Text, TextSize } from 'shared/ui/Text/ui/Text';
 interface ArticleListProps {
     className?: string;
     articles: Article[];
@@ -46,7 +46,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
             );
         };
 
-        if (isLoading) {
+        if (!isLoading && !articles.length) {
             return (
                 <div
                     className={classNames(cls.ArticleList, {}, [
@@ -54,8 +54,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
                         cls[view],
                     ])}
                 >
-                    {articles.length > 0 ? articles.map(renderArticle) : null}
-                    {isLoading && getSkeletons(view)}
+                    <Text size={TextSize.L} title={t('Articles Not Found')} />
                 </div>
             );
         }
@@ -68,6 +67,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
                 ])}
             >
                 {articles.length > 0 ? articles.map(renderArticle) : null}
+                {isLoading && getSkeletons(view)}
             </div>
         );
     }

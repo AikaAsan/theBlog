@@ -6,5 +6,18 @@
   "add comment": "Add comment",
   "Submit": "Submit",
   "read...": "Read",
-  "back to the list": "back to the list"
+  "back to the list": "back to the list",
+  "Sort By": "Sort By",
+  "Search": "Search",
+  "Filter By": "Filter By",
+  "date created": "date created",
+  "title": "title",
+  "views": "views",
+  "asc": "asc",
+  "desc": "desc",
+  "IT": "IT",
+  "ALL": "ALL Articles",
+  "SCIENCE": "SCIENCE",
+  "ECONOMICS": "ECONOMICS",
+  "Articles Not Found": "Articles Not Found"
 }

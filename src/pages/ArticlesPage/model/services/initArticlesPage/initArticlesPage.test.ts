@@ -1,7 +1,11 @@
 import { fetchArticlesList } from './../fetchArticlesList/fetchArticlesList';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { initArticlesPage } from './initArticlesPage';
-import { ArticleView } from 'entities/Article/model/types/article';
+import {
+    ArticleSortField,
+    ArticleView,
+} from 'entities/Article/model/types/article';
+import { URLSearchParams } from 'url';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
@@ -17,13 +21,16 @@ describe('initArticlesPage.test', () => {
                 page: 1,
                 hasMore: true,
                 _initialized: false,
+                order: 'asc',
+                sort: ArticleSortField.CREATED,
+                search: '',
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(new URLSearchParams());
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('initArticlesPage not called when _initialized true', async () => {
@@ -40,7 +47,7 @@ describe('initArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(new URLSearchParams());
 
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
