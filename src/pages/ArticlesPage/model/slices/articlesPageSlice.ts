@@ -1,4 +1,4 @@
-import { SortOrder } from './../../../../shared/types/index';
+import { SortOrder } from 'shared/types/index';
 import { ArticlePageSchema } from './../types/articlePageSchema';
 import { StateSchema } from 'app/providers/StoreProvider';
 
@@ -10,8 +10,10 @@ import {
 import { Article, ArticleView } from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
-import { ArticleSortField } from 'entities/Article/model/types/article';
-import { actions } from '@storybook/addon-actions';
+import {
+    ArticleSortField,
+    ArticleType,
+} from 'entities/Article/model/types/article';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
@@ -36,6 +38,7 @@ const articlesPageSlice = createSlice({
         order: 'asc',
         sort: ArticleSortField.CREATED,
         search: '',
+        type: ArticleType.ALL,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -57,6 +60,9 @@ const articlesPageSlice = createSlice({
         },
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload;
+        },
+        setType: (state, action: PayloadAction<ArticleType>) => {
+            state.type = action.payload;
         },
 
         initialState: (state) => {

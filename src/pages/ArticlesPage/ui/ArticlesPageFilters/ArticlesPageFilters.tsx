@@ -8,10 +8,11 @@ import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
-import { FC, memo, useCallback } from 'react';
+import { FC, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classnames/classNames';
@@ -20,8 +21,11 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import cls from './ArticlesPageFilters.module.scss';
 import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleType } from 'entities/Article/model/types/article';
+
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 
 interface ArticlesPageFiltersProps {
     className?: string;
@@ -36,6 +40,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
         const sort = useSelector(getArticlesPageSort);
         const order = useSelector(getArticlesPageOrder);
         const search = useSelector(getArticlesPageSearch);
+        const type = useSelector(getArticlesPageType);
 
         const fetchData = useCallback(() => {
             dispatch(fetchArticlesList({ replace: true }));
@@ -77,6 +82,14 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
             },
             [debouncedFetchData, dispatch]
         );
+        const onChangeType = useCallback(
+            (value: ArticleType) => {
+                dispatch(articlesPageActions.setType(value));
+                dispatch(articlesPageActions.setPage(1));
+                fetchData();
+            },
+            [dispatch, fetchData]
+        );
 
         return (
             <div
@@ -101,6 +114,11 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(
                         value={search}
                     />
                 </Card>
+                <ArticleTypeTabs
+                    value={type}
+                    onChangeType={onChangeType}
+                    className={cls.tabs}
+                />
             </div>
         );
     }

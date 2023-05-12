@@ -1,4 +1,7 @@
-import { ArticleSortField } from './../../../../../entities/Article/model/types/article';
+import {
+    ArticleSortField,
+    ArticleType,
+} from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/types/index';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { getArticlesPageInitialized } from '../../selectors/articlePageSelectors';
@@ -21,7 +24,7 @@ export const initArticlesPage = createAsyncThunk<
         const orderFromUrl = searchParams.get('order') as SortOrder;
         const sortFromUrl = searchParams.get('sort') as ArticleSortField;
         const searchFromUrl = searchParams.get('search');
-
+        const typeFromUrl = searchParams.get('type') as ArticleType;
         if (orderFromUrl) {
             dispatch(articlesPageActions.setOrder(orderFromUrl));
         }
@@ -30,6 +33,9 @@ export const initArticlesPage = createAsyncThunk<
         }
         if (searchFromUrl) {
             dispatch(articlesPageActions.setSearch(searchFromUrl));
+        }
+        if (typeFromUrl) {
+            dispatch(articlesPageActions.setType(typeFromUrl));
         }
         dispatch(articlesPageActions.initialState());
         dispatch(fetchArticlesList({}));

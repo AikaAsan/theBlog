@@ -5,6 +5,11 @@ export { getArticleDetailsData } from 'entities/Article/model/selectors/articleD
 export { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
-export { Article, ArticleView, ArticleSortField } from './model/types/article';
+export {
+    Article,
+    ArticleView,
+    ArticleSortField,
+    ArticleType,
+} from './model/types/article';
 
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
