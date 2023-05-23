@@ -23,3 +23,18 @@ body {
 .content-page {
     display: flex;
 }
+
+*::-webkit-scrollbar {
+    width: 12px;               /* scrollbar width */
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);        /* scrollbar track color */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color);    /* thumb color */
+    border-radius: 20px;       /* border radius of thumb */
+    border: 2px solid var(--primary-color); /* thimb padding */
+}
