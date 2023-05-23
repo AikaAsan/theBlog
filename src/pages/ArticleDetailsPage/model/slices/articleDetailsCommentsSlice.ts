@@ -1,5 +1,5 @@
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 
@@ -14,7 +14,8 @@ const commentsAdapter = createEntityAdapter<Comment>({
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+    (state) =>
+        state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 );
 const articleDetailsCommentsSlice = createSlice({
     name: 'articleDetailsCommentsSlice',

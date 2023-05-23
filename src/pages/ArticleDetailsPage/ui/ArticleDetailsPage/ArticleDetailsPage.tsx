@@ -11,10 +11,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-    articleDetailsCommentsReducer,
-    getArticleComments,
-} from '../../model/slices/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticleDetailsCommentsisLoading } from '../../model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -24,16 +21,13 @@ import { addCommentForArticle } from '../../model/services/AddCommentForArticle/
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'shared/ui/Page/Page';
-import {
-    articleDetailsPageRecommendationsReducer,
-    getArticleRecommendations,
-} from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slices';
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendations: articleDetailsPageRecommendationsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 interface ArticleDetailsPageProps {
     className?: string;
@@ -80,7 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         <DynamicModuleLoader
             reducers={reducers}
             removeAfterUnmount
-            name={`articleDetailsComments`}
+            name={`articleDetailsPage`}
         >
             <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
@@ -98,6 +92,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     articles={recommendations}
                     isLoading={recommenadtionsIsLoading}
                     className={cls.recommendations}
+                    target={`_blank`}
                 />
                 <Text title={t('Comments')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendCommentHandler} />

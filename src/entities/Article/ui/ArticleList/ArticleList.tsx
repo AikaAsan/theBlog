@@ -1,5 +1,5 @@
 import { Article, ArticleView } from '../../model/types/article';
-import { FC, memo } from 'react';
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './ArticleList.module.scss';
@@ -11,6 +11,7 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -31,6 +32,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
             articles,
             isLoading,
             view = ArticleView.GRID,
+            target,
         } = props;
 
         const { t } = useTranslation();
@@ -42,6 +44,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
                     view={view}
                     key={article.id}
                     className={cls.card}
+                    target={target}
                 />
             );
         };
