@@ -25,6 +25,7 @@ import { getArticleRecommendations } from '../../model/slices/articleDetailsPage
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -43,7 +44,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const recommenadtionsIsLoading = useSelector(
         getArticleRecommendationsIsLoading
     );
-    const navigate = useNavigate();
 
     const commentsIsLoading = useSelector(getArticleDetailsCommentsisLoading);
 
@@ -53,9 +53,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         },
         [dispatch]
     );
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -79,9 +76,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('back to the list')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     title={t('Recommendations')}
