@@ -15,5 +15,8 @@
     "SCIENCE": "SCIENCE",
     "ECONOMICS": "ÉCONOMIE",
     "Articles Not Found": "L'articles introuvables",
-    "Recommendations": "Recommendations"
+    "Recommendations": "Recommendations",
+    "edit": "modifier",
+    "create new article": "créer un nouvel article",
+    "edit article": "modifier l'article"
 }

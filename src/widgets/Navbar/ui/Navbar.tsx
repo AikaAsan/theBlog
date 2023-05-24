@@ -7,6 +7,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
     className?: string;
@@ -34,6 +37,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
+                <Text
+                    className={cls.appName}
+                    title={t('Medium Clone')}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                    className={cls.createBtn}
+                >
+                    {t('create new article')}
+                </AppLink>
                 <Button
                     className={cls.links}
                     theme={ButtonTheme.CLEAR_INVERTED}
