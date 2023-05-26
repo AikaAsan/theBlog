@@ -5,7 +5,7 @@ import { StateSchema } from '../config/StateSchema';
 import { createReduxStore } from '../config/store';
 
 interface StoreProviderProps {
-    children?: ReactFragment | object;
+    children?: ReactNode | object;
     initialState?: DeepPartial<StateSchema>;
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
