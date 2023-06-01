@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleView } from 'entities/Article';
+import { Article, ArticleView } from '../../model/types/article';
 import { ArticleType, ArticleBlockType } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
@@ -93,7 +93,6 @@ LoadingList.args = {
     articles: [],
     isLoading: true,
     view: ArticleView.LIST,
-
 };
 
 export const LoadingGrid = Template.bind({});

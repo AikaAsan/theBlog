@@ -3,7 +3,7 @@ import { classNames, Modes } from 'shared/lib/classnames/classNames';
 import cls from './ProfileCard.module.scss';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Input } from 'shared/ui/Input/Input';
-import { Profile } from 'entities/Profile';
+import { Profile } from '../../index';
 import { Loader } from 'shared/ui/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';

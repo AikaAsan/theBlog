@@ -1,4 +1,4 @@
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '../getUserAuthData/getUserAuthData';
 import { StateSchema } from 'app/providers/StoreProvider';
 
 describe('getUserAuthData.test', () => {
