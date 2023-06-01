@@ -1,4 +1,4 @@
-import { userActions } from 'entities/User';
+import { userActions } from '../slice/userSlice';
 import { StateSchema } from 'app/providers/StoreProvider';
 
 import { UserSchema } from '../types/user';

@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ValidationProfileError } from 'entities/Profile';
+import { ValidationProfileError } from '../../types/profile';
 import { getProfileValidationErrors } from './getProfileValidationErrors';
 
 describe('getProfileIsLoading.test', () => {
