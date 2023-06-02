@@ -11,6 +11,7 @@ export function buildPlugins({
     apiUrl,
     project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
