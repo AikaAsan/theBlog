@@ -18,14 +18,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import AddCommentForm from 'features/AddCommentForm/ui/AddCommentForm/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/AddCommentForArticle/AddCommentForArticle';
-import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'shared/ui/Page/Page';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { VStack } from 'shared/ui/Stack';
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -63,7 +62,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                {t('Article is not found ')}
+                {t('Article is not found')}
             </Page>
         );
     }
@@ -76,25 +75,27 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text
-                    title={t('Recommendations')}
-                    className={cls.commentTitle}
-                    size={TextSize.L}
-                />
-                <ArticleList
-                    articles={recommendations}
-                    isLoading={recommenadtionsIsLoading}
-                    className={cls.recommendations}
-                    target={`_blank`}
-                />
-                <Text title={t('Comments')} className={cls.commentTitle} />
-                <AddCommentForm onSendComment={onSendCommentHandler} />
-                <CommentList
-                    comments={comments}
-                    isLoading={commentsIsLoading}
-                />
+                <VStack gap='16' max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
+                        title={t('Recommendations')}
+                        className={cls.commentTitle}
+                        size={TextSize.L}
+                    />
+                    <ArticleList
+                        articles={recommendations}
+                        isLoading={recommenadtionsIsLoading}
+                        className={cls.recommendations}
+                        target={`_blank`}
+                    />
+                    <Text title={t('Comments')} className={cls.commentTitle} />
+                    <AddCommentForm onSendComment={onSendCommentHandler} />
+                    <CommentList
+                        comments={comments}
+                        isLoading={commentsIsLoading}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

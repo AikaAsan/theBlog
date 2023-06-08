@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { FC, memo, useCallback, useEffect } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     DynamicModuleLoader,
@@ -27,6 +27,7 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 interface ArticleDetailsProps {
     className?: string;
     id: string;
@@ -81,7 +82,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
 
         if (isLoading) {
             content = (
-                <>
+                <VStack gap='8'>
                     <Skeleton
                         width={200}
                         height={200}
@@ -104,7 +105,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
                         height={200}
                         className={cls.skeleton}
                     />
-                </>
+                </VStack>
             );
         } else if (error) {
             content = (
@@ -113,30 +114,31 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
         } else {
             content = (
                 <>
-                    <div className={cls.avatarWrapper}>
+                    <HStack max justify='center' className={cls.avatarWrapper}>
                         <Avatar
                             alt='avatar'
                             src={article?.img}
                             className={cls.avatar}
                             size={200}
                         />
-                    </div>
+                    </HStack>
+                    <VStack max gap='4'>
+                        <Text
+                            className={cls.title}
+                            title={article?.title}
+                            text={article?.subtitle}
+                            size={TextSize.L}
+                        />
 
-                    <Text
-                        className={cls.title}
-                        title={article?.title}
-                        text={article?.subtitle}
-                        size={TextSize.L}
-                    />
-
-                    <div className={cls.articleInfo}>
-                        <Icon Svg={eyeIcon} className={cls.icon} />
-                        <Text text={String(article?.views)} />
-                    </div>
-                    <div className={cls.articleInfo}>
-                        <Icon Svg={calendarIcon} className={cls.icon} />
-                        <Text text={article?.createdAt} />
-                    </div>
+                        <HStack gap='8' className={cls.articleInfo}>
+                            <Icon Svg={eyeIcon} className={cls.icon} />
+                            <Text text={String(article?.views)} />
+                        </HStack>
+                        <HStack gap='8' className={cls.articleInfo}>
+                            <Icon Svg={calendarIcon} className={cls.icon} />
+                            <Text text={article?.createdAt} />
+                        </HStack>
+                    </VStack>
                     {article?.blocks.map(renderBlock)}
                 </>
             );
@@ -147,11 +149,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
                 reducers={reducers}
                 removeAfterUnmount
             >
-                <div
-                    className={classNames(cls.articleDetails, {}, [className])}
+                <VStack
+                    gap='16'
+                    className={classNames(cls.ArticleDetails, {}, [className])}
                 >
                     {content}
-                </div>
+                </VStack>
             </DynamicModuleLoader>
         );
     }

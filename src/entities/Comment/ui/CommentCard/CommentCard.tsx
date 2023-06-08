@@ -8,6 +8,7 @@ import { Text } from 'shared/ui/Text/ui/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from 'shared/ui/Stack';
 interface CommentCardProps {
     className?: string;
     comment?: Comment;
@@ -21,7 +22,10 @@ export const CommentCard: FC<CommentCardProps> = memo(
 
         if (isLoading) {
             return (
-                <div className={classNames(cls.commentCard, {}, [className])}>
+                <VStack
+                    max
+                    className={classNames(cls.commentCard, {}, [className])}
+                >
                     <div className={cls.header}>
                         <Skeleton border='50%' width={30} height={30} />
                         <Skeleton
@@ -37,12 +41,15 @@ export const CommentCard: FC<CommentCardProps> = memo(
                             className={cls.text}
                         />
                     </div>
-                </div>
+                </VStack>
             );
         }
         return (
-            // eslint-disable-next-line i18next/no-literal-string
-            <div className={classNames(cls.commentCard, {}, [className])}>
+            <VStack
+                max
+                gap='8'
+                className={classNames(cls.commentCard, {}, [className])}
+            >
                 <AppLink
                     className={cls.header}
                     to={`${RoutePath.profile}${comment?.user.id}`}
@@ -50,7 +57,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
                     {comment?.user.avatar ? (
                         <Avatar
                             size={30}
-                            alt={'avatar'}
+                            alt={`avatar`}
                             src={comment?.user.avatar}
                         />
                     ) : null}
@@ -60,7 +67,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
                     />
                 </AppLink>
                 <Text text={comment?.text} className={cls.text} />
-            </div>
+            </VStack>
         );
     }
 );
