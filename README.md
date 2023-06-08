@@ -93,7 +93,6 @@ For asynchronous reducers connection (in order not to pull them into a general b
 - Counter
 - Country
 - Currency
-- Notification
 - Profile
 - User
 
