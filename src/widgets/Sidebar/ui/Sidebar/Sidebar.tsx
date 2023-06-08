@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classnames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -8,6 +8,7 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {
     className?: string;
@@ -22,17 +23,17 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    // const itemsList = useMemo(
-    //     () =>
-    //         SidebarItemsList.map((item) => (
-    //             <SidebarItem
-    //                 item={item}
-    //                 collapsed={collapsed}
-    //                 key={item.path}
-    //             />
-    //         )),
-    //     [collapsed]
-    // );
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItemsList]
+    );
 
     return (
         <aside
@@ -51,15 +52,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <div className={cls.items}>
-                {sidebarItemsList.map((item) => (
-                    <SidebarItem
-                        item={item}
-                        collapsed={collapsed}
-                        key={item.path}
-                    />
-                ))}
-            </div>
+            <VStack className={cls.items} gap='8'>
+                {itemsList}
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} short={collapsed} />

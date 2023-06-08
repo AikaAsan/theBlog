@@ -18,5 +18,12 @@
     "Recommendations": "Recommendations",
     "edit": "modifier",
     "create new article": "créer un nouvel article",
-    "edit article": "modifier l'article"
+    "edit article": "modifier l'article",
+    "article": {
+        "Error Occured": "Erreur est survenue",
+        "no comments yet": "Pas encore de commentaire.",
+        "Article is not found": "l'article est introuvable",
+        "Recommendations": "Les recommendations",
+        "Comments": "Les comments"
+    }
 }

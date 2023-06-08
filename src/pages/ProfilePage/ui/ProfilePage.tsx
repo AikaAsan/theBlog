@@ -28,6 +28,7 @@ import { TextTheme, Text } from 'shared/ui/Text/ui/Text';
 import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'shared/ui/Page/Page';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -116,29 +117,31 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
             removeAfterUnmount
             name={`profile`}
         >
-            <Page className={classNames(cls.ProfilePage, {}, [className])}>
-                <ProfilePageHeader />
-                {validationErrors?.length &&
-                    validationErrors.map((error) => (
-                        <Text
-                            key={error}
-                            theme={TextTheme.ERROR}
-                            text={validationErrorTranslations[error]}
-                        />
-                    ))}
-                <ProfileCard
-                    data={formData}
-                    error={error}
-                    isLoading={isLoading}
-                    readonly={readonly}
-                    onChangeFirstname={onChangeFirstnameHandler}
-                    onChangeLastname={onChangeLastnameHandler}
-                    onChangeCity={onChangeCityHandler}
-                    onChangeUsername={onChangeUsernameHandler}
-                    onChangeAvatar={onChangeAvatarHandler}
-                    onChangeCurrency={onChangeCurrencyHandler}
-                    onChangeCountry={onChangeCountryHandler}
-                />
+            <Page className={classNames('', {}, [className])}>
+                <VStack gap='16' max>
+                    <ProfilePageHeader />
+                    {validationErrors?.length &&
+                        validationErrors.map((error) => (
+                            <Text
+                                key={error}
+                                theme={TextTheme.ERROR}
+                                text={validationErrorTranslations[error]}
+                            />
+                        ))}
+                    <ProfileCard
+                        data={formData}
+                        error={error}
+                        isLoading={isLoading}
+                        readonly={readonly}
+                        onChangeFirstname={onChangeFirstnameHandler}
+                        onChangeLastname={onChangeLastnameHandler}
+                        onChangeCity={onChangeCityHandler}
+                        onChangeUsername={onChangeUsernameHandler}
+                        onChangeAvatar={onChangeAvatarHandler}
+                        onChangeCurrency={onChangeCurrencyHandler}
+                        onChangeCountry={onChangeCountryHandler}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

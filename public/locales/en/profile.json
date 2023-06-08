@@ -20,5 +20,15 @@
   "Please provide Name and Lastname": "Please provide Name and Lastname",
   "Incorrect age": "Incorrect age",
   "Profile Page": "Profile Page",
-  "Country": "Country"
+  "Country": "Country",
+  "profile": {
+      "Error Occured": "Error Occured",
+      "Try to reload the page": "Try to reload the page",
+      "Your name": "Your Name",
+      "Your Last Name": "Your Last Name",
+      "City": "City",
+      "Username": "Username",
+      "Avatar": "Avatar",
+      "Provide link to the avatar": "Provide link to the avatar"
+  }
 }
