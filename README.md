@@ -62,7 +62,7 @@ The project includes descriptive story cases for each component.
 
 - `npm run storybook` - run Storybook 
 
-More about [Storybook](/docs/storybook.md)
+More about [Storybook documentation](/docs/storybook.md)
 
 ## Project configuration
 For development, the project contains configs:
