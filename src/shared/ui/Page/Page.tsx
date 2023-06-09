@@ -50,7 +50,7 @@ export const Page: FC<PageProps> = (props: PageProps) => {
         console.log('scroll', e.currentTarget.scrollTop);
     }, 500);
     return (
-        <section
+        <main
             ref={wrapperRef}
             className={classNames(cls.page, {}, [className])}
             onScroll={onScrollHandler}
@@ -59,6 +59,6 @@ export const Page: FC<PageProps> = (props: PageProps) => {
             {onScrollEnd ? (
                 <div ref={triggerRef} className={cls.trigger} />
             ) : null}
-        </section>
+        </main>
     );
 };
