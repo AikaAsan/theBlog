@@ -22,13 +22,17 @@
   "Profile Page": "Profile Page",
   "Country": "Country",
   "profile": {
-      "Error Occured": "Error Occured",
-      "Try to reload the page": "Try to reload the page",
-      "Your name": "Your Name",
-      "Your Last Name": "Your Last Name",
-      "City": "City",
-      "Username": "Username",
-      "Avatar": "Avatar",
-      "Provide link to the avatar": "Provide link to the avatar"
+    "Error Occured": "Error Occured",
+    "Try to reload the page": "Try to reload the page",
+    "Your name": "Your Name",
+    "Your Last Name": "Your Last Name",
+    "City": "City",
+    "Username": "Username",
+    "Avatar": "Avatar",
+    "Provide link to the avatar": "Provide link to the avatar",
+    "select currency": "select currency",
+    "select country": "select country",
+    "Country": "Country",
+    "Currency": "Currency"
   }
 }

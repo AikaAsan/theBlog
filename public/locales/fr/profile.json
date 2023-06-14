@@ -29,6 +29,9 @@
         "Currency": "Devise",
         "City": "Ville",
         "Username": "Nom d'utilisateur",
-        "Provide link to the avatar": "fournir un lien vers l'avatar"
+        "Provide link to the avatar": "fournir un lien vers l'avatar",
+        "select currency": "Sélectionnez la devise",
+        "select country": "Sélectionnez le pays",
+        "Country": "Les Pays"
     }
 }
