@@ -10,6 +10,8 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
     className?: string;
@@ -20,6 +22,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
+
+    console.log(
+        'RoutePath.profile + authData.id: ',
+        RoutePath.profile + authData?.id
+    );
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -49,13 +56,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('create new article')}
                 </AppLink>
-                <Button
-                    className={cls.links}
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={onLogout}
-                >
-                    {t('Logout')}
-                </Button>
+                <Dropdown
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('Profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        { content: t('Logout'), onClick: onLogout },
+                    ]}
+                    trigger={
+                        <Avatar src={authData.avatar} size={30} alt='avatar' />
+                    }
+                    direction={`bottom left`}
+                />
             </header>
         );
     }
