@@ -9,11 +9,11 @@ process.argv.forEach((value) => console.log(value));
 const layers = ['features', 'entities', 'pages'];
 
 if (!layer || !layers.includes(layer)) {
-    throw new Error(`Укажите слой ${layers.join(' или ')}`);
+    throw new Error(`please provide layer ${layers.join(' or ')}`);
 }
 
 if (!sliceName) {
-    throw new Error('Укажите название слайса');
+    throw new Error('Please provide Slice name');
 }
 
 createTemplate(layer, sliceName);

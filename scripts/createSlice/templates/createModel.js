@@ -15,7 +15,10 @@ module.exports = async (layer, sliceName) => {
             await fs.mkdir(resolveModelPath('selectors'));
             await fs.mkdir(resolveModelPath('services'));
         } catch (e) {
-            console.log(`Не удалось создать model сегмент для слайса ${sliceName}`, e);
+            console.log(
+                `Couldnt create model segment for the slice ${sliceName}`,
+                e
+            );
         }
     };
 
@@ -26,7 +29,7 @@ module.exports = async (layer, sliceName) => {
                 reduxSliceTemplate(sliceName),
             );
         } catch (e) {
-            console.log('Не удалось создать редакс слайс', e);
+            console.log('Couldnt create redux slice', e);
         }
     };
 
@@ -37,7 +40,7 @@ module.exports = async (layer, sliceName) => {
                 schemaTypeTemplate(sliceName),
             );
         } catch (e) {
-            console.log('Не удалось создать тип схемы стейта', e);
+            console.log('Couldnt create Schema.ts file', e);
         }
     };
 

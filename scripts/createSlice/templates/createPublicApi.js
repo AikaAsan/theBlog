@@ -16,6 +16,6 @@ export { ${firstCharUpperCase(
     )} } from './model/types/${schemaName}';`
         );
     } catch (e) {
-        console.log('Не удалось создать PUBLIC API');
+        console.log('couldnt create PUBLIC API');
     }
 };
