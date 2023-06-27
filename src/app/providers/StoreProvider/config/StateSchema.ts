@@ -15,12 +15,14 @@ import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticlePageSchema } from 'pages/ProfilePage';
 import { UISchema } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     ui: UISchema;
-
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    
     //async reducers
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
@@ -29,6 +31,7 @@ export interface StateSchema {
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlePageSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
+ 
 }
 
 export type StateSchemaKey = keyof StateSchema;

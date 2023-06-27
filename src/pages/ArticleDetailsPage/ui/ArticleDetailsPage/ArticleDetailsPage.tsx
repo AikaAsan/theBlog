@@ -2,7 +2,7 @@
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classnames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import { Text, TextSize } from 'shared/ui/Text/ui/Text';
@@ -25,6 +25,7 @@ import { fetchArticleRecommendations } from '../../model/services/fetchArticleRe
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { VStack } from 'shared/ui/Stack';
+import { ArticlesRecommendationsList } from 'features/ArticlesRecommendationsList';
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -39,10 +40,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch();
     const comments = useSelector(getArticleComments.selectAll);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
-    const recommenadtionsIsLoading = useSelector(
-        getArticleRecommendationsIsLoading
-    );
 
     const commentsIsLoading = useSelector(getArticleDetailsCommentsisLoading);
 
@@ -55,7 +52,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
-        dispatch(fetchArticleRecommendations());
     });
     if (!id) {
         return (
@@ -78,17 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <Text
-                        title={t('Recommendations')}
-                        className={cls.commentTitle}
-                        size={TextSize.L}
-                    />
-                    <ArticleList
-                        articles={recommendations}
-                        isLoading={recommenadtionsIsLoading}
-                        className={cls.recommendations}
-                        target={`_blank`}
-                    />
+                    <ArticlesRecommendationsList />
                     <Text title={t('Comments')} className={cls.commentTitle} />
                     <AddCommentForm onSendComment={onSendCommentHandler} />
                     <CommentList
