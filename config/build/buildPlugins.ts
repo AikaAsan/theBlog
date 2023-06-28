@@ -38,11 +38,6 @@ export function buildPlugins({
             })
         );
     }
-    plugins.push(
-        new BundleAnalyzerPlugin({
-            openAnalyzer: true,
-            analyzerMode: 'static',
-        })
-    );
+
     return plugins;
 }
