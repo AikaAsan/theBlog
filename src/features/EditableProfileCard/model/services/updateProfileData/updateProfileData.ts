@@ -1,9 +1,12 @@
-import { ValidationProfileError } from './../../types/profile';
-import { validateProfileData } from './../validateProfileData/validateProfileData';
+
+import { validateProfileData } from '../validateProfileData/validateProfileData';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Profile } from '../../types/profile';
+import { Profile } from '../../../../../entities/Profile/model/types/profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
+import { ValidationProfileError } from '../../types/EditableProfileCardSchema';
+
+
 
 //async Thunk
 export const updateProfileData = createAsyncThunk<
@@ -22,7 +25,10 @@ export const updateProfileData = createAsyncThunk<
         return rejectWithValue(errors);
     }
     try {
-        const response = await extra.api.put<Profile>('/profile', formData);
+        const response = await extra.api.put<Profile>(
+            `/profile/${formData?.id}`,
+            formData
+        );
 
         if (!response.data) {
             throw new Error();

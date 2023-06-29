@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ProfileSchema, ValidationProfileError } from '../types/profile';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { profileReducer, profileActions } from './profileSlice';
+import { ProfileSchema, ValidationProfileError } from '../types/EditableProfileCardSchema';
 
 const data = {
     first: 'Aika',

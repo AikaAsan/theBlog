@@ -4,7 +4,6 @@ import {
     ArticleType,
     ArticleBlockType,
 } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const article: Article = {
@@ -81,7 +80,7 @@ const article: Article = {
 };
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
     parameters: {
         router: {

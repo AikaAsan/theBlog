@@ -2,7 +2,6 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classnames/classNames';
-import cls from './ArticleEditPage.module.scss';
 import { Page } from 'shared/ui/Page/Page';
 import { useParams } from 'react-router-dom';
 
@@ -18,7 +17,7 @@ const ArticleEditPage: FC<ArticleEditPageProps> = memo(
         const isEdit = Boolean(id);
 
         return (
-            <Page className={classNames(cls.articleEditPage, {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 {isEdit ? t('edit article') : t('create new article')}
             </Page>
         );
