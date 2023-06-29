@@ -1,7 +1,5 @@
 {
   "PROFILE PAGE": "PROFILE PAGE",
-  "Profile": "Profile",
-  "Edit": "Edit",
   "Your name": "Your Name",
   "Your Last Name": "Your Last Name",
   "Error Occured": "Error occured",
@@ -33,6 +31,16 @@
     "select currency": "select currency",
     "select country": "select country",
     "Country": "Country",
-    "Currency": "Currency"
+    "Currency": "Currency",
+    "Server error": "Internal server error",
+    "Incorrect country": "Incorrect country",
+    "No data": "No Data",
+    "Please provide Name and Lastname": "Please provide Name and Lastname",
+    "Incorrect age": "Incorrect age",
+    "Profile": "Profile",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Edit": "Edit",
+    "Profile not Found": "Profile not found"
   }
 }
