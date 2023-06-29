@@ -24,6 +24,7 @@
         "no comments yet": "Pas encore de commentaire.",
         "Article is not found": "l'article est introuvable",
         "Recommendations": "Les recommendations",
-        "Comments": "Les comments"
+        "Comments": "Les comments",
+        "Could not load articles": "Impossible de charger les articles"
     }
 }

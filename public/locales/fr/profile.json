@@ -1,5 +1,5 @@
 {
-    "PROFILE PAGE": " LA PAGE DU PROFILE",
+    "PROFILE PAGE": " LA PAGE DU PROFIL",
     "Profile": "Le Profile",
     "Edit": "Modifier",
     "Your name": "Votre Nom",
@@ -32,6 +32,16 @@
         "Provide link to the avatar": "fournir un lien vers l'avatar",
         "select currency": "Sélectionnez la devise",
         "select country": "Sélectionnez le pays",
-        "Country": "Les Pays"
+        "Country": "Les Pays",
+        "Server error": "d'erreur interne du serveur",
+        "Incorrect country": "Pays d'origine incorrects",
+        "No data": "No Data",
+        "Please provide Name and Lastname": "Veuillez indiquer votre nom et prenom",
+        "Incorrect age": "L'age incorrect",
+        "Profile": "Le Profile",
+        "Cancel": "Annuler",
+        "Save": "Sauvegarder",
+        "Edit": "Modifier",
+        "Profile not Found": "Le Profil non trouve"
     }
 }

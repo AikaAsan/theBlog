@@ -11,7 +11,6 @@ export function buildPlugins({
     apiUrl,
     project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -39,5 +38,6 @@ export function buildPlugins({
             })
         );
     }
+
     return plugins;
 }
