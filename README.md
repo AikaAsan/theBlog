@@ -30,6 +30,8 @@ The main purpose of the project was to set up entire infrastructure for a projec
 - reusable UI library with more than 15+ accessible and sematic components.
 - implemented infinite scroll with data virtualization
 
+### The Diagram of src folder: 
+![Feature-Sliced-Design  src folder](https://github.com/AikaAsan/theBlog/assets/55157764/6b94bc36-95b1-4b1e-b164-52683f2f3bd9)
 ## Installation and Setup Instructions 
 Clone down this repository. You will need `node`and `npm` installed globally on your machine. 
 
