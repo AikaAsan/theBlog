@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/ui/Text';
 import { useTranslation } from 'react-i18next';
 
-interface ProfilePageProps {
+ interface ProfilePageProps {
     className?: string;
 }
 
