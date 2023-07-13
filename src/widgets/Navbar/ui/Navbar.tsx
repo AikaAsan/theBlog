@@ -6,7 +6,13 @@ import { classNames } from 'shared/lib/classnames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData,
+    getUserRoles,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -23,10 +29,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
-    console.log(
-        'RoutePath.profile + authData.id: ',
-        RoutePath.profile + authData?.id
-    );
+    const isAdmin = useSelector(isUserAdmin);
+    
+    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -41,12 +46,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         setIsAuthModal(false);
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text
                     className={cls.appName}
-                    title={t('Medium Clone')}
+                    title={t(`Medium Clone`)}
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
@@ -59,6 +66,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 <Dropdown
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable
+                            ? [
+                                {
+                                    content: t('Admin Panel'),
+                                    href: RoutePath.admin_panel,
+                                },
+                            ]
+                            : []),
                         {
                             content: t('Profile'),
                             href: RoutePath.profile + authData.id,

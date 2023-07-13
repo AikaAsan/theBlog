@@ -1,3 +1,8 @@
 {
-    "MAIN PAGE": "MAIN PAGE"
+  "MAIN PAGE": "MAIN PAGE",
+  "about": {
+    "Admin Panel": "Admin Panel"
+  },
+  "Admin Panel": "Admin Panel",
+  "Profile": "Profile"
 }
