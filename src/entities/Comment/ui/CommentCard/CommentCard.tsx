@@ -22,7 +22,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
 
         if (isLoading) {
             return (
-                <VStack
+                <VStack gap={'8'}
                     max
                     className={classNames(cls.commentCard, {}, [className])}
                 >
