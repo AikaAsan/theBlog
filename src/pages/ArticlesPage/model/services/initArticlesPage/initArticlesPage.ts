@@ -1,7 +1,7 @@
 import {
     ArticleSortField,
     ArticleType,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article';
 import { SortOrder } from 'shared/types/index';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { getArticlesPageInitialized } from '../../selectors/articlePageSelectors';

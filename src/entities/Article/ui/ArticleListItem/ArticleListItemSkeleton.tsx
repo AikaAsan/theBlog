@@ -1,4 +1,4 @@
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 import { FC, memo } from 'react';
 
 import { classNames } from 'shared/lib/classnames/classNames';

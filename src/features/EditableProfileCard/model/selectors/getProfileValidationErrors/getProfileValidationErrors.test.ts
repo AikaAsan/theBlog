@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getProfileValidationErrors } from './getProfileValidationErrors';
-import { ValidationProfileError } from '../../types/EditableProfileCardSchema';
+import { ValidationProfileError } from '../../consts/editableProfileCardsConsts';
 
 describe('getProfileIsLoading.test', () => {
     test('should return filled state', () => {

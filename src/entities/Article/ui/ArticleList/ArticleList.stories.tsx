@@ -1,6 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
-import { ArticleType, ArticleBlockType } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import {
+    ArticleType,
+    ArticleBlockType,
+    ArticleView,
+} from '../../model/consts/articleConsts';
 import { ArticleList } from './ArticleList';
 
 export default {

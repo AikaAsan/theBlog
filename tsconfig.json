@@ -16,9 +16,10 @@
         "esModuleInterop": true,
         //With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec
         //(require() module.export) common.js => import
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
         //instead of import * as React from 'react' can do import React from 'react'
         //brings the behavior of TypeScript in-line with Babel, where extra code is emitted to make using a default export of a module more ergonomic.
+        "isolatedModules": true,
     },
     "ts-node": {
         "compilerOptions": {

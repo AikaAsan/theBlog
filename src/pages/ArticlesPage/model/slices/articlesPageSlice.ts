@@ -13,7 +13,7 @@ import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesLi
 import {
     ArticleSortField,
     ArticleType,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
