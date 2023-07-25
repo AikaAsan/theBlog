@@ -5,6 +5,7 @@ import {
     ArticleBlockType,
 } from 'entities/Article/model/types/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const article: Article = {
     id: '1',
@@ -97,12 +98,12 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
     <ArticleDetailsPage {...args} />
 );
 
-// export const Normal = Template.bind({});
-// Normal.args = {};
-// Normal.decorators = [
-//     StoreDecorator({
-//         articleDetails: {
-//             data: article,
-//         },
-//     }),
-// ];
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];

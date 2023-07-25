@@ -22,22 +22,23 @@ const reducers: ReducersList = {
 };
 interface ArticleDetailsPageProps {
     className?: string;
+    id?: string;
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
-
-    if (!id) {
-        return (
-            <Page
-                className={classNames(cls.ArticleDetailsPage, {}, [className])}
-            >
-                {t('Article is not found')}
-            </Page>
-        );
-    }
+    //
+    //     if (!id) {
+    //         return (
+    //             <Page
+    //                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
+    //             >
+    //                 {t('Article is not found')}
+    //             </Page>
+    //         );
+    //     }
     return (
         <DynamicModuleLoader
             reducers={reducers}

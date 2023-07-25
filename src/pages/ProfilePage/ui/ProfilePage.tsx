@@ -7,18 +7,17 @@ import { Text } from 'shared/ui/Text/ui/Text';
 import { useTranslation } from 'react-i18next';
 
  interface ProfilePageProps {
-    className?: string;
+     className?: string;
+     id?: string;
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile');
     const { id } = useParams<{ id: string }>();
 
-    console.log(' profile id', id);
-
-    if (!id) {
-        return <Text text={t('Profile not Found')} />;
-    }
+    // if (!id) {
+    //     return <Text text={t('Profile not Found')} />;
+    // }
     return (
         <Page className={classNames('', {}, [className])}>
             <VStack gap='16' max>
