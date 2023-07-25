@@ -1,9 +1,9 @@
+import { Article, ArticleTextBlock } from '../../model/types/article';
+
 import {
-    Article,
     ArticleBlockType,
-    ArticleTextBlock,
     ArticleView,
-} from '../../model/types/article';
+} from '../../model/consts/articleConsts';
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classnames/classNames';

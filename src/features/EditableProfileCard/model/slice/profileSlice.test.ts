@@ -2,8 +2,8 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { profileReducer, profileActions } from './profileSlice';
-import { ProfileSchema, ValidationProfileError } from '../types/EditableProfileCardSchema';
-
+import { ProfileSchema } from '../types/EditableProfileCardSchema';
+import { ValidationProfileError } from '../consts/editableProfileCardsConsts';
 const data = {
     first: 'Aika',
     lastname: 'Carriere',

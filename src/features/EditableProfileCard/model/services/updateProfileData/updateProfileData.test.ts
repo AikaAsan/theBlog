@@ -1,9 +1,8 @@
-
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { updateProfileData } from './updateProfileData';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidationProfileError } from '../../types/EditableProfileCardSchema';
+import { ValidationProfileError } from '../../consts/editableProfileCardsConsts';
 
 const data = {
     first: 'Aika',

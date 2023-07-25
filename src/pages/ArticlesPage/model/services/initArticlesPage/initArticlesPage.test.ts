@@ -4,7 +4,7 @@ import { initArticlesPage } from './initArticlesPage';
 import {
     ArticleSortField,
     ArticleView,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article';
 import { URLSearchParams } from 'url';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');

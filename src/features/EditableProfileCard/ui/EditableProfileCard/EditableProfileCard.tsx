@@ -15,7 +15,7 @@ import { classNames } from 'shared/lib/classnames/classNames';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { Text } from 'shared/ui/Text/ui/Text';
-import { ValidationProfileError } from '../../model/types/EditableProfileCardSchema';
+import { ValidationProfileError } from '../../model/consts/editableProfileCardsConsts';
 import { ProfileCard } from 'entities/Profile';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';

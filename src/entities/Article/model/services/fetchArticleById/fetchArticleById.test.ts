@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleType, ArticleBlockType } from '../../types/article';
+import { ArticleType, ArticleBlockType } from '../../consts/articleConsts';
 import { fetchArticleById } from './fetchArticleById';
 
 const data = {
