@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { FC, memo, useCallback } from 'react';
+import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     DynamicModuleLoader,
@@ -30,7 +30,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { HStack, VStack } from 'shared/ui/Stack';
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -74,9 +74,16 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
             }
         }, []);
 
-        useInitialEffect(() => {
-            dispatch(fetchArticleById(id));
-        });
+        //         useInitialEffect(() => {
+        //
+        //             dispatch(fetchArticleById(id));
+        //         });
+
+        useEffect(() => {
+            if (__PROJECT__ !== 'storybook') {
+                dispatch(fetchArticleById(id));
+            }
+        }, [dispatch, id]);
 
         let content;
 
