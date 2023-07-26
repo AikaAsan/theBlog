@@ -1,10 +1,10 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
-import { BuildOptions } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
     paths,
@@ -37,13 +37,12 @@ export function buildPlugins({
                 openAnalyzer: false,
                 analyzerMode: 'static',
             }),
-            new CircularDependencyPlugin({
-                // exclude detection of files based on a RegExp
-                exclude: /node_modules/,
-                // add errors to webpack instead of warnings
-                failOnError: true,
-            })
+       
         );
+        plugins.push(new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+        }));
     }
 
     return plugins;
