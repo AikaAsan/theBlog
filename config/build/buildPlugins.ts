@@ -29,12 +29,6 @@ export function buildPlugins({
         new CopyPlugin({
             patterns: [{ from: paths.locales, to: paths.buildLocales }],
         }),
-        new CircularDependencyPlugin({
-            // exclude detection of files based on a RegExp
-            exclude: /node_modules/,
-            // add errors to webpack instead of warnings
-            failOnError: true,
-        }),
     ];
 
     if (isDev) {
@@ -42,6 +36,12 @@ export function buildPlugins({
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
                 analyzerMode: 'static',
+            }),
+            new CircularDependencyPlugin({
+                // exclude detection of files based on a RegExp
+                exclude: /node_modules/,
+                // add errors to webpack instead of warnings
+                failOnError: true,
             })
         );
     }
