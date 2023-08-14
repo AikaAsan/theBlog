@@ -55,7 +55,7 @@ export function ListBox(props: ListBoxProps) {
                 disabled={readonly}
             >
                 {/* to be fixed. These nested buttons give an error in console */}
-                <HListBox.Button disabled={readonly} className={cls.trigger}>
+                <HListBox.Button className={cls.trigger}>
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListBox.Button>
                 <HListBox.Options
