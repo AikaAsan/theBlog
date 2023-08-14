@@ -1,11 +1,12 @@
 import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin';
 import { BuildOptions } from '../types/config';
 
-interface BuildBabelLoaderOptions extends BuildOptions {
+interface BuildBabelLoaderProps extends BuildOptions {
     isTsx?: boolean;
 }
 
-export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderOptions) {
+export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
+    console.log('isDev in buildBabelLoader', isDev);
     return {
         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
@@ -21,13 +22,19 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderOptions) {
                             keyAsDefaultValue: true,
                         },
                     ],
-                    ['@babel/plugin-transform-typescript', { isTsx }],
-                    ['@babel/plugin-transform-runtime'],
+                    [
+                        '@babel/plugin-transform-typescript',
+                        {
+                            isTsx,
+                        },
+                    ],
+                    '@babel/plugin-transform-runtime',
                     isTsx && [
                         babelRemovePropsPlugin,
                         { props: ['data-testid'] },
                     ],
-                    isDev && require.resolve('react-refresh/babel'),
+                    // to be fixed, react refresh give white screen
+                    // isDev && require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
             },
         },

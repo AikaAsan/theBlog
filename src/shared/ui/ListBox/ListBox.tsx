@@ -43,7 +43,7 @@ export function ListBox(props: ListBoxProps) {
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
-    
+
     return (
         <HStack gap='4'>
             {label && <span>{`${label}>`}</span>}
@@ -54,6 +54,7 @@ export function ListBox(props: ListBoxProps) {
                 className={classNames(cls.listBox, {}, [className])}
                 disabled={readonly}
             >
+                {/* to be fixed. These nested buttons give an error in console */}
                 <HListBox.Button className={cls.trigger}>
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListBox.Button>
