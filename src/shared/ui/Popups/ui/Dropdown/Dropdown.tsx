@@ -4,7 +4,9 @@ import cls from './Dropdown.module.scss';
 import { classNames } from 'shared/lib/classnames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupsCls from '../../styles/popup.module.scss'
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -20,19 +22,13 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top right': cls.optionsTopRight,
-    'top left': cls.optionsTopLeft,
-};
 
 export function Dropdown(props: DropdownProps) {
     const { className, items, trigger, direction = 'bottom right' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
     return (
-        <Menu as='div' className={classNames(cls.dropdown, {}, [className])}>
+        <Menu as='div' className={classNames(cls.dropdown, {}, [className, popupsCls.popup])}>
             <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item) => {
@@ -43,13 +39,13 @@ export function Dropdown(props: DropdownProps) {
                             onClick={item.onClick}
                             className={classNames(
                                 cls.item,
-                                { [cls.active]: active },
+                                { [popupsCls.active]: active },
                                 []
                             )}
                         >
                             {item.content}
                         </button>
-                    )
+                    );
                     if (item.href) {
                         return (
                             <Menu.Item
@@ -66,7 +62,6 @@ export function Dropdown(props: DropdownProps) {
                     return (
                         <Menu.Item
                             as={Fragment}
-                        
                             disabled={item.disabled}
                             key={String(item.content)}
                         >
