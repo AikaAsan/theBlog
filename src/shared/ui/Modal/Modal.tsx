@@ -11,6 +11,7 @@ import {
 import { classNames, Modes } from 'shared/lib/classnames/classNames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
+import { Overlay } from '../Overlay/Overlay';
 
 interface ModalProps {
     className?: string;
@@ -82,12 +83,12 @@ export const Modal: FC<ModalProps> = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, modes, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
+            <div className={classNames(cls.Modal, modes, [className, theme, 'app_modal'])}>
+                <Overlay onClick={closeHandler}>
+                    <div className={cls.content} >
                         {children}
                     </div>
-                </div>
+                </Overlay>
             </div>
         </Portal>
     );
