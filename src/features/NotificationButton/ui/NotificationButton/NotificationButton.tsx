@@ -17,21 +17,22 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(
     (props: NotificationButtonProps) => {
         const { className } = props;
         const isMobile = useDevice();
-
-        console.log('isMobile', isMobile);
-
         const [isOpen, setIsOpen] = useState(false);
+
         const onOpenDrawer = useCallback(() => {
             setIsOpen(true);
         }, []);
+
         const onCloseDrawer = useCallback(() => {
             setIsOpen(false);
         }, []);
+
         const trigger = (
             <Button theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
                 <Icon Svg={NotificationIcon} inverted />
             </Button>
         );
+        
         return (
             <div>
                 {!isMobile ? (
