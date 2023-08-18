@@ -8,6 +8,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
+import { AnimationProvider } from 'shared/components/AnimationProvider';
 
 interface NotificationButtonProps {
     className?: string;
@@ -32,7 +33,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(
                 <Icon Svg={NotificationIcon} inverted />
             </Button>
         );
-        
+
         return (
             <div>
                 {!isMobile ? (
@@ -46,9 +47,11 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(
                 ) : (
                     <>
                         {trigger}
-                        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                            <NotificationList />
-                        </Drawer>
+                        <AnimationProvider>
+                            <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                                <NotificationList />
+                            </Drawer>
+                        </AnimationProvider>
                     </>
                 )}
             </div>
