@@ -1,22 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+} from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { classNames } from 'shared/lib/classnames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/lib/classnames/classNames';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
-import { Text } from 'shared/ui/Text/ui/Text';
+import { TextTheme } from '@/shared/ui/Text/ui/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { ValidationProfileError } from '../../model/consts/editableProfileCardsConsts';
-import { ProfileCard } from 'entities/Profile';
+import { ProfileCard } from '@/entities/Profile';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';

@@ -6,18 +6,18 @@ import {
 } from '../../model/consts/articleConsts';
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from '@/shared/lib/classnames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { Text } from 'shared/ui/Text/ui/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
-import { Card } from 'shared/ui/Card/Card';
-import { useHover } from 'shared/lib/hooks/useHover/useHover';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { Text } from '@/shared/ui/Text/ui/Text';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { Card } from '@/shared/ui/Card/Card';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button/ui/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
     className?: string;

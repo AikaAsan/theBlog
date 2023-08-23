@@ -1,10 +1,10 @@
 import { ArticleView } from '../../model/consts/articleConsts';
 import { FC, memo } from 'react';
 
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from '@/shared/lib/classnames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { Card } from 'shared/ui/Card/Card';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Card } from '@/shared/ui/Card/Card';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;

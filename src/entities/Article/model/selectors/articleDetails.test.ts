@@ -3,7 +3,7 @@ import {
     getArticleDetailsIsLoading,
     getArticleDetailsData,
 } from './articleDetails';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import axios from 'axios';
 
 describe('ArticleDetails.test', () => {

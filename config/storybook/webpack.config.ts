@@ -16,6 +16,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
     config.module?.rules?.push(buildCssLoader(true));
+    // for resolving import path aliases 
+    config.resolve!.alias = { '@': paths.src };
 
     if (config.module?.rules) {
         config.module.rules = config.module?.rules?.map(

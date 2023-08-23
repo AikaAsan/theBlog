@@ -1,5 +1,5 @@
 import { getUserInitialized } from '../getUserInitialized/getUserInitialized';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getUserAuthData.test', () => {
     test('should return user initilized true', () => {

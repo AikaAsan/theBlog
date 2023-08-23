@@ -4,7 +4,7 @@ import {
     getArticlesPageNumber,
 } from './../../selectors/articlePageSelectors';
 
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getArticlesPageHasMore } from '../../selectors/articlePageSelectors';
 import { articlesPageActions } from '../../slices/articlesPageSlice';

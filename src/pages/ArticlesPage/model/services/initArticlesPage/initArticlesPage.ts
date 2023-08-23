@@ -1,11 +1,11 @@
 import {
     ArticleSortField,
     ArticleType,
-} from 'entities/Article';
-import { SortOrder } from 'shared/types/index';
+} from '@/entities/Article';
+import { SortOrder } from '@/shared/types/index';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { getArticlesPageInitialized } from '../../selectors/articlePageSelectors';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { articlesPageActions } from '../../slices/articlesPageSlice';
 

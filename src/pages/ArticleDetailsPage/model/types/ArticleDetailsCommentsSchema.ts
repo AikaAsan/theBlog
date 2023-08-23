@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Comment } from 'entities/Comment';
+import { Comment } from '@/entities/Comment';
 
 //EntityState has two fields : ids and entities. ArticleDetailsSchema inheriting those two fields 
 // export interface EntityState<T> {

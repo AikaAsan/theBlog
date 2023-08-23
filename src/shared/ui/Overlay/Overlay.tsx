@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from '@/shared/lib/classnames/classNames';
 import cls from './Overlay.module.scss';
 import { ReactNode } from 'react';
 

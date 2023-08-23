@@ -11,7 +11,7 @@
         //for absolute import
         "baseUrl": "",
         "paths": {
-            "*": ["./src/*"]
+            "@/*": ["./src/*"]
         },
         "esModuleInterop": true,
         //With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec
