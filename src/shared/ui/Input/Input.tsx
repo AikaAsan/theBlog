@@ -1,4 +1,4 @@
-import { classNames, Modes } from 'shared/lib/classnames/classNames';
+import { classNames, Modes } from '@/shared/lib/classnames/classNames';
 import React, {
     InputHTMLAttributes,
     memo,

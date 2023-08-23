@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Button } from 'shared/ui/Button/ui/Button';
+import { Button } from '@/shared/ui/Button/ui/Button';
 
 // for testing purposes
 export const BugButton = () => {

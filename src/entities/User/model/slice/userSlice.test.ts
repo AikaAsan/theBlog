@@ -1,9 +1,9 @@
 import { userActions } from '../slice/userSlice';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { UserSchema } from '../types/user';
 import { userReducer } from './userSlice';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 describe('userSlice.test', () => {
     test('should set initialized true ', () => {

@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classnames/classNames';
-import { Page } from 'shared/ui/Page/Page';
-import { VStack } from 'shared/ui/Stack/VStack/VStack';
-import { EditableProfileCard } from 'features/EditableProfileCard';
+import { classNames } from '@/shared/lib/classnames/classNames';
+import { Page } from '@/shared/ui/Page/Page';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
-import { Text } from 'shared/ui/Text/ui/Text';
+import { Text } from '@/shared/ui/Text/ui/Text';
 import { useTranslation } from 'react-i18next';
 
  interface ProfilePageProps {

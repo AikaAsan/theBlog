@@ -1,7 +1,7 @@
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
-export { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
+export { getArticleDetailsData } from './model/selectors/articleDetails';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export {

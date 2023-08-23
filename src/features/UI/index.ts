@@ -1,4 +1,4 @@
-export { uiReducer, uiActions } from 'features/UI/model/slices/UISlice';
+export { uiReducer, uiActions } from './model/slices/UISlice';
 
 export { getUIScrollPositionByPath } from './model/selectors/ui';
 

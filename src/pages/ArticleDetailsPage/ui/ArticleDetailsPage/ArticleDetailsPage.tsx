@@ -1,20 +1,20 @@
 /* eslint-disable max-len */
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classnames/classNames';
+import { classNames } from '@/shared/lib/classnames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'shared/ui/Page/Page';
+} from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/shared/ui/Page/Page';
 
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { VStack } from 'shared/ui/Stack';
-import { ArticlesRecommendationsList } from 'features/ArticlesRecommendationsList';
+import { VStack } from '@/shared/ui/Stack';
+import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 
 const reducers: ReducersList = {

@@ -5,11 +5,11 @@ import {
     getArticlesPageNumber,
     getArticlesPageType,
 } from './../../selectors/articlePageSelectors';
-import { Article, ArticleType } from 'entities/Article';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { Article, ArticleType } from '@/entities/Article';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getArticlesPageLimit } from '../../selectors/articlePageSelectors';
-import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 
 interface FetchArticlesListProps {
     replace?: boolean;
