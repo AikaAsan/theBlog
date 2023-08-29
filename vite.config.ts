@@ -14,4 +14,9 @@ export default defineConfig({
         __API__: JSON.stringify(process.env.API_URL || 'http://localhost:5000'),
         __PROJECT__: JSON.stringify('frontend'),
     },
+    css: {
+        modules: {
+            generateScopedName: '[path][name]__[local]--[hash:base64:5]',
+        },
+    },
 });
