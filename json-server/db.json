@@ -1058,5 +1058,65 @@
             "currency": "EUR",
             "country": "Canada"
         }
+    ],
+    "article-ratings": [
+        {
+            "id": "1",
+            "rate": 4,
+            "feedback": "I liked the article",
+            "userId": "1",
+            "articleId": "1"
+        },
+        {
+            "id": "2",
+            "rate": 4,
+            "feedback": "very usefull",
+            "userId": "1",
+            "articleId": "2"
+        },
+        {
+            "userId": "1",
+            "articleId": "3",
+            "rate": 3,
+            "feedback": "",
+            "id": "I7ofk1u"
+        },
+        {
+            "userId": "1",
+            "articleId": "9",
+            "rate": 5,
+            "feedback": "asdasdasdasd",
+            "id": "Y7MhPzo"
+        },
+        {
+            "userId": "1",
+            "articleId": "10",
+            "rate": 1,
+            "feedback": "meh",
+            "id": "II0a75O"
+        },
+        {
+            "userId": "1",
+            "articleId": "7",
+            "rate": 3,
+            "feedback": "",
+            "id": "bcPnbbZ"
+        }
+    ],
+    "profile-ratings": [
+        {
+            "id": "1",
+            "rate": 4,
+            "feedback": "Liked the article",
+            "userId": "1",
+            "profileId": "1"
+        },
+        {
+            "id": "2",
+            "rate": 4,
+            "feedback": "Dope",
+            "userId": "1",
+            "profileId": "2"
+        }
     ]
 }
