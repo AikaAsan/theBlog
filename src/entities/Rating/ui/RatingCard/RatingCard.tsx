@@ -10,6 +10,7 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/ui/Button';
 import { Input } from '@/shared/ui/Input/Input';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
+
 interface RatingCardProps {
     className?: string;
     title?: string;
@@ -17,6 +18,7 @@ interface RatingCardProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard: FC<RatingCardProps> = memo(
@@ -28,12 +30,13 @@ export const RatingCard: FC<RatingCardProps> = memo(
             hasFeedback,
             onAccept,
             onCancel,
+            rate = 0,
         } = props;
-        const { t } = useTranslation();
+        const { t } = useTranslation('article');
         const isMobile = useDevice();
 
         const [isModalOpen, setIsModalOpen] = useState(false);
-        const [starsCount, setStarsCount] = useState(0);
+        const [starsCount, setStarsCount] = useState(rate);
         const [feedback, setFeedback] = useState('');
 
         console.log('feedback', feedback);
@@ -71,10 +74,20 @@ export const RatingCard: FC<RatingCardProps> = memo(
             </>
         );
         return (
-            <Card className={classNames('', {}, [className])}>
-                <VStack align={`center`} gap={`8`}>
-                    <Text title={title} />
-                    <StarRating size={40} onSelect={onSelectStars} />
+            <Card className={classNames('', {}, [className])} max>
+                <VStack align={`center`} gap={`8`} max>
+                    <Text
+                        title={
+                            starsCount
+                                ? t('thank you for rating the article')
+                                : title
+                        }
+                    />
+                    <StarRating
+                        size={40}
+                        onSelect={onSelectStars}
+                        selectedStars={starsCount}
+                    />
                 </VStack>
                 {!isMobile ? (
                     <Modal isOpen={isModalOpen} lazy>

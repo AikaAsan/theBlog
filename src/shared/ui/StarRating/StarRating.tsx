@@ -18,7 +18,7 @@ export const StarRating: FC<StarRatingProps> = memo(
         const { className, onSelect, size = 30, selectedStars = 0 } = props;
         const { t } = useTranslation();
 
-        const [currentStarsCount, setCurrentStarsCount] = useState(0);
+        const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
         const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
         //used closure to close starCount var in order to keep it in context
