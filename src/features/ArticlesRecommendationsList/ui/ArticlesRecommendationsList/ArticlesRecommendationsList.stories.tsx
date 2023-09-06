@@ -21,14 +21,14 @@ const Template: ComponentStory<typeof ArticlesRecommendationsList> = (args) => (
 
 const article: Article = {
     id: '1',
-    img: '',
-    createdAt: '',
+    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    createdAt: '26.02.2023',
     views: 123,
     user: { id: '1', username: '123' },
     blocks: [],
     type: [],
-    title: '123',
-    subtitle: 'asfsa',
+    title: 'Javascript news LATEST',
+    subtitle: 'What is new in JavaScript in 2023?',
 };
 
 export const Normal = Template.bind({});
