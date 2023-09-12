@@ -25,7 +25,7 @@ import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchA
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from '@/entities/Article';
 
-import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { ArticleTypeTabs } from '@/entities/Article';
 
 interface ArticlesPageFiltersProps {
     className?: string;

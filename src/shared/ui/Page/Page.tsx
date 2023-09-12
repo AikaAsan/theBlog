@@ -1,9 +1,6 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { uiActions } from '@/features/UI';
-import {
-    getUIScrollPosition,
-    getUIScrollPositionByPath,
-} from '@/features/UI/model/selectors/ui';
+import { getUIScrollPositionByPath } from '@/features/UI';
 import { FC, MutableRefObject, ReactNode, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
