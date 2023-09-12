@@ -92,7 +92,14 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'react/jsx-key': 'off',
-        'pathchecker-plugin-fsd-methodology/path-checker': ['error', {alias: '@'}],
+        'pathchecker-plugin-fsd-methodology/path-checker': [
+            'error',
+            { alias: '@' },
+        ],
+        'pathchecker-plugin-fsd-methodology/public-api-import-rules': [
+            'error',
+            { alias: '@' },
+        ],
         // 'arrow-body-style': 'off'
     },
     globals: {
