@@ -98,7 +98,14 @@ module.exports = {
         ],
         'pathchecker-plugin-fsd-methodology/public-api-import-rules': [
             'error',
-            { alias: '@' },
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.stories.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
         ],
         // 'arrow-body-style': 'off'
     },
