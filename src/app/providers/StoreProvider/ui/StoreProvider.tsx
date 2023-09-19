@@ -22,7 +22,7 @@ export const StoreProvider = (props: StoreProviderProps) => {
     console.log('children', children);
     return (
         <Provider store={store}>
-            <>{children}</>
+            {children}
         </Provider>
     );
 };
