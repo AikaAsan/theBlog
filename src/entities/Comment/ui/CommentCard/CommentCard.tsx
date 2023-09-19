@@ -7,7 +7,7 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Text } from '@/shared/ui/Text/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { VStack } from '@/shared/ui/Stack';
 interface CommentCardProps {
     className?: string;
@@ -22,7 +22,8 @@ export const CommentCard: FC<CommentCardProps> = memo(
 
         if (isLoading) {
             return (
-                <VStack gap={'8'}
+                <VStack
+                    gap={'8'}
                     max
                     className={classNames(cls.commentCard, {}, [className])}
                 >
