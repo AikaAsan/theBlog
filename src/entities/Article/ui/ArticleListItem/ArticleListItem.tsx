@@ -16,7 +16,7 @@ import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/ui/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {

@@ -2,7 +2,7 @@ import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from '@/widgets/PageError';
 
 interface ErrorBoundaryProps {
-    children: ReactNode;
+    children: ReactNode | JSX.Element;
 }
 
 interface ErrorBoundaryState {
@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component<
             );
         }
 
-        return <>{this.props.children}</>;
+        return <>{children}</>;
     }
 }
 

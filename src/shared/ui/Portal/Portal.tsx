@@ -1,8 +1,10 @@
-import { ReactNode } from 'react';
+import { JSXElementConstructor, ReactElement, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {
-    children?: ReactNode;
+    children?:
+        | ReactNode
+        | ReactElement<any, string | JSXElementConstructor<any>>;
     element?: HTMLElement;
 }
 
